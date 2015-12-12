@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.2-*",
   "description": "CACSLibrary.Web.Autofac ¿‡ø‚",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "Autofac.Mvc5": "3.3.4",
-    "CACSLibrary": "1.0.0-*",
-    "CACSLibrary.Autofac": "1.0.0-*"
+    "CACSLibrary": "1.4.17-*",
+    "CACSLibrary.Autofac": "2.0.2-*"
   }
 }

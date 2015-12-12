@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.2.3-*",
   "description": "CACSLibrary.Data ¿‡ø‚",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.0.0-*",
+    "CACSLibrary": "1.4.17-*",
     "EntityFramework": "6.1.3"
   }
 }

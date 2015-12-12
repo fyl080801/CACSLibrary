@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "2.0.2-*",
   "description": "CACSLibrary.Autofac Class Library",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
@@ -38,6 +38,6 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.0.0-*"
+    "CACSLibrary": "1.4.17-*"
   }
 }

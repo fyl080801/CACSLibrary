@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.4-*",
   "description": "CACSLibrary.WCF 类库",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
@@ -36,6 +36,6 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.0.0-*"
+    "CACSLibrary": "1.4.17-*"
   }
 }

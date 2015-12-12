@@ -25,7 +25,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -36,12 +36,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -118,7 +118,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -129,12 +129,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -211,7 +211,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -222,12 +222,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -304,7 +304,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -315,12 +315,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -397,7 +397,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -408,12 +408,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -490,7 +490,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -501,12 +501,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -583,7 +583,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -594,12 +594,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -676,7 +676,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -687,12 +687,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -769,7 +769,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -780,12 +780,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -862,7 +862,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -873,12 +873,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -955,7 +955,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -966,12 +966,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -1048,7 +1048,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -1059,12 +1059,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -1141,7 +1141,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -1152,12 +1152,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -1234,7 +1234,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -1245,12 +1245,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -1327,7 +1327,7 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.0.0": {
+      "CACSLibrary/1.4.17": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -1338,12 +1338,12 @@
           "System.Xml.Linq"
         ]
       },
-      "CACSLibrary.Autofac/1.0.0": {
+      "CACSLibrary.Autofac/2.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.0.0"
+          "CACSLibrary": "1.4.17"
         }
       },
       "Microsoft.AspNet.Mvc/5.1.0": {
@@ -1399,11 +1399,11 @@
     }
   },
   "libraries": {
-    "CACSLibrary/1.0.0": {
+    "CACSLibrary/1.4.17": {
       "type": "project",
       "path": "../CACSLibrary/project.json"
     },
-    "CACSLibrary.Autofac/1.0.0": {
+    "CACSLibrary.Autofac/2.0.2": {
       "type": "project",
       "path": "../CACSLibrary.Autofac/project.json"
     },
@@ -1491,8 +1491,8 @@
   "projectFileDependencyGroups": {
     "": [
       "Autofac.Mvc5 >= 3.3.4",
-      "CACSLibrary >= 1.0.0-*",
-      "CACSLibrary.Autofac >= 1.0.0-*"
+      "CACSLibrary >= 1.4.17-*",
+      "CACSLibrary.Autofac >= 2.0.2-*"
     ],
     ".NETFramework,Version=v4.5": [
       "fx/System.Web >= 4.0.0"
