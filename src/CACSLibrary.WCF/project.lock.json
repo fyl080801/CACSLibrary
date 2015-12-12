@@ -1,0 +1,269 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v3.5": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.1": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.2": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6.1": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v3.5/win7-x86": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v3.5/win7-x64": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5/win7-x86": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5/win7-x64": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.1/win7-x86": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.1/win7-x64": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win7-x86": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win7-x64": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.XML",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6/win7-x86": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6/win7-x64": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win7-x86": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win7-x64": {
+      "CACSLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "CACSLibrary/1.0.0": {
+      "type": "project",
+      "path": "../CACSLibrary/project.json"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "CACSLibrary >= 1.0.0-*"
+    ],
+    ".NETFramework,Version=v3.5": [
+      "fx/System.ServiceModel >= 3.0.0"
+    ],
+    ".NETFramework,Version=v4.5": [
+      "fx/System.ServiceModel >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.5.1": [
+      "fx/System.ServiceModel >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.5.2": [
+      "fx/System.ServiceModel >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.6": [
+      "fx/System.ServiceModel >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.6.1": [
+      "fx/System.ServiceModel >= 4.0.0"
+    ]
+  }
+}

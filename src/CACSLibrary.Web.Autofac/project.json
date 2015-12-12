@@ -1,6 +1,6 @@
 {
   "version": "1.0.0-*",
-  "description": "CACSLibrary.Web ¿‡ø‚",
+  "description": "CACSLibrary.Web.Autofac ¿‡ø‚",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
   "projectUrl": "",
@@ -33,6 +33,8 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.0.0-*"
+    "Autofac.Mvc5": "3.3.4",
+    "CACSLibrary": "1.0.0-*",
+    "CACSLibrary.Autofac": "1.0.0-*"
   }
 }

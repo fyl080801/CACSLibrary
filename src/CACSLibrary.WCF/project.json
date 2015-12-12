@@ -1,34 +1,37 @@
-{
+Ôªø{
   "version": "1.0.0-*",
-  "description": "CACSLibrary.Web ¿‡ø‚",
+  "description": "CACSLibrary.WCF Á±ªÂ∫ì",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
   "projectUrl": "",
   "licenseUrl": "",
   "frameworks": {
+    "net35": {
+      "frameworkAssemblies": { "System.ServiceModel": "3.0.0.0" }
+    },
     "net45": {
       "frameworkAssemblies": {
-        "System.Web": "4.0.0.0"
+        "System.ServiceModel": "4.0.0.0"
       }
     },
     "net451": {
       "frameworkAssemblies": {
-        "System.Web": "4.0.0.0"
+        "System.ServiceModel": "4.0.0.0"
       }
     },
     "net452": {
       "frameworkAssemblies": {
-        "System.Web": "4.0.0.0"
+        "System.ServiceModel": "4.0.0.0"
       }
     },
     "net46": {
       "frameworkAssemblies": {
-        "System.Web": "4.0.0.0"
+        "System.ServiceModel": "4.0.0.0"
       }
     },
     "net461": {
       "frameworkAssemblies": {
-        "System.Web": "4.0.0.0"
+        "System.ServiceModel": "4.0.0.0"
       }
     }
   },
