@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0-*",
+  "description": "CACSLibrary.Autofac Class Library",
+  "authors": [ "fyl08" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net35": {
+      "dependencies": {
+        "Autofac": "2.6.3.862"
+      }
+    },
+    "net45": {
+      "dependencies": {
+        "Autofac": "3.5.2"
+      }
+    },
+    "net451": {
+      "dependencies": {
+        "Autofac": "3.5.2"
+      }
+    },
+    "net452": {
+      "dependencies": {
+        "Autofac": "3.5.2"
+      }
+    },
+    "net46": {
+      "dependencies": {
+        "Autofac": "3.5.2"
+      }
+    },
+    "net461": {
+      "dependencies": {
+        "Autofac": "3.5.2"
+      }
+    }
+  },
+  "dependencies": {
+    "CACSLibrary": "1.0.0-*"
+  }
+}

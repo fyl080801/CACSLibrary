@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0-*",
+  "description": "CACSLibrary.Web Class Library",
+  "authors": [ "fyl08" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0.0"
+      }
+    },
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0.0"
+      }
+    },
+    "net452": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0.0"
+      }
+    },
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0.0"
+      }
+    },
+    "net461": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0.0"
+      }
+    }
+  },
+  "dependencies": {
+    "CACSLibrary": "1.0.0-*"
+  }
+}

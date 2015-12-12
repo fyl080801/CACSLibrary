@@ -1,0 +1,22 @@
+using System;
+using System.Configuration;
+namespace CACSLibrary.Configuration
+{
+	/// <summary>
+	/// “˝«Ê≈‰÷√
+	/// </summary>
+	public class EngineConfig : ConfigurationSection
+	{
+		/// <summary>
+		/// »›∆˜¿‡–Õ
+		/// </summary>
+		[ConfigurationProperty("containerType")]
+		public string ContainerType
+		{
+			get
+			{
+				return base["containerType"] as string;
+			}
+		}
+	}
+}

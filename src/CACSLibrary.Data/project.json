@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0-*",
+  "description": "CACSLibrary.Data ¿‡ø‚",
+  "authors": [ "fyl08" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net45": {
+      "frameworkAssemblies": { "System.Transactions": "4.0.0.0" }
+    },
+    "net451": {
+      "frameworkAssemblies": { "System.Transactions": "4.0.0.0" }
+    },
+    "net452": {
+      "frameworkAssemblies": { "System.Transactions": "4.0.0.0" }
+    },
+    "net46": {
+      "frameworkAssemblies": { "System.Transactions": "4.0.0.0" }
+    },
+    "net461": {
+      "frameworkAssemblies": { "System.Transactions": "4.0.0.0" }
+    }
+  },
+  "dependencies": {
+    "CACSLibrary": "1.0.0-*",
+    "EntityFramework": "6.1.3"
+  }
+}
