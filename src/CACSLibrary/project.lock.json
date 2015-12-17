@@ -1,0 +1,70 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v3.5": {},
+    ".NETFramework,Version=v4.5": {},
+    ".NETFramework,Version=v4.5.1": {},
+    ".NETFramework,Version=v4.5.2": {},
+    ".NETFramework,Version=v4.6": {},
+    ".NETFramework,Version=v4.6.1": {},
+    ".NETFramework,Version=v3.5/win7-x86": {},
+    ".NETFramework,Version=v3.5/win7-x64": {},
+    ".NETFramework,Version=v4.5/win7-x86": {},
+    ".NETFramework,Version=v4.5/win7-x64": {},
+    ".NETFramework,Version=v4.5.1/win7-x86": {},
+    ".NETFramework,Version=v4.5.1/win7-x64": {},
+    ".NETFramework,Version=v4.5.2/win7-x86": {},
+    ".NETFramework,Version=v4.5.2/win7-x64": {},
+    ".NETFramework,Version=v4.6/win7-x86": {},
+    ".NETFramework,Version=v4.6/win7-x64": {},
+    ".NETFramework,Version=v4.6.1/win7-x86": {},
+    ".NETFramework,Version=v4.6.1/win7-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v3.5": [
+      "fx/System.Configuration >= 2.0.0",
+      "fx/System.Data >= 2.0.0",
+      "fx/System.Data.DataSetExtensions >= 3.5.0",
+      "fx/System.XML >= 2.0.0",
+      "fx/System.Xml.Linq >= 3.5.0"
+    ],
+    ".NETFramework,Version=v4.5": [
+      "fx/System.Configuration >= 4.0.0",
+      "fx/System.Data >= 4.0.0",
+      "fx/System.Data.DataSetExtensions >= 4.0.0",
+      "fx/System.XML >= 4.0.0",
+      "fx/System.Xml.Linq >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.5.1": [
+      "fx/System.Configuration >= 4.0.0",
+      "fx/System.Data >= 4.0.0",
+      "fx/System.Data.DataSetExtensions >= 4.0.0",
+      "fx/System.XML >= 4.0.0",
+      "fx/System.Xml.Linq >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.5.2": [
+      "fx/System.Configuration >= 4.0.0",
+      "fx/System.Data >= 4.0.0",
+      "fx/System.Data.DataSetExtensions >= 4.0.0",
+      "fx/System.XML >= 4.0.0",
+      "fx/System.Xml.Linq >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.6": [
+      "fx/System.Configuration >= 4.0.0",
+      "fx/System.Data >= 4.0.0",
+      "fx/System.Data.DataSetExtensions >= 4.0.0",
+      "fx/System.Xml >= 4.0.0",
+      "fx/System.Xml.Linq >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.6.1": [
+      "fx/System.Configuration >= 4.0.0",
+      "fx/System.Data >= 4.0.0",
+      "fx/System.Data.DataSetExtensions >= 4.0.0",
+      "fx/System.Xml >= 4.0.0",
+      "fx/System.Xml.Linq >= 4.0.0"
+    ]
+  }
+}
