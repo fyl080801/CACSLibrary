@@ -66,19 +66,11 @@ namespace CACSLibrary.Web.Plugin
                     }
                     if (node.Name == "supportedVersion")
                     {
-#if NET4_5_1
                         description.SupportedVersion = Version.Parse(node.LastChild.Value);
-#else
-
-#endif
                     }
                     if (node.Name == "version")
                     {
-#if NET4_5_1
                         description.Version = Version.Parse(node.LastChild.Value);
-#else
-
-#endif
                     }
                     if (node.Name == "remark")
                     {
@@ -91,11 +83,7 @@ namespace CACSLibrary.Web.Plugin
                             Dependency item = new Dependency
                             {
                                 PluginId = childNode.Attributes["pluginId"].Value,
-#if NET4_5_1
                                 Version = Version.Parse(childNode.Attributes["version"].Value)
-#else
-
-#endif
                             };
                             description.DependentOn.Add(item);
                         }

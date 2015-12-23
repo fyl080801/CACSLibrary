@@ -105,13 +105,8 @@ namespace CACSLibrary.Web.Plugin
                 foreach (KeyValuePair<FileInfo, PluginDescription> dfd in descriptorCollection)
                 {
                     PluginDescription pluginDescriptor = dfd.Value;
-#if NET4_5_1
-                    if (string.IsNullOrWhiteSpace(pluginDescriptor.PluginId))
-                        throw new CACSException("插件 Id 为空");
-#else
                     if (string.IsNullOrEmpty(pluginDescriptor.PluginId))
                         throw new CACSException("插件 Id 为空");
-#endif
                     if (referencedPlugins.Contains(pluginDescriptor))
                     {
                         throw new CACSException("插件重复，Id：" + pluginDescriptor.PluginId);

@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.4.17-*",
+    "CACSLibrary": "1.4.18-*",
     "EntityFramework": "6.1.3"
   }
 }

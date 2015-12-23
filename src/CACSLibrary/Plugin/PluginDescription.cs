@@ -31,6 +31,14 @@ namespace CACSLibrary.Plugin
         public virtual FileInfo PluginFile { get; set; }
 
         /// <summary>
+        /// 插件所在物理路径
+        /// </summary>
+        public virtual string PluginPath
+        {
+            get { return this.PluginFile.DirectoryName; }
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public virtual bool Installed { get; set; }

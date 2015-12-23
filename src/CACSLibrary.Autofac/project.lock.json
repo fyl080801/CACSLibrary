@@ -14,7 +14,7 @@
           "lib/NET35/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
         "frameworkAssemblies": [
@@ -36,7 +36,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -58,7 +58,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -80,7 +80,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -102,7 +102,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -124,7 +124,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -148,7 +148,7 @@
           "lib/NET35/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
         "frameworkAssemblies": [
@@ -172,7 +172,7 @@
           "lib/NET35/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
         "frameworkAssemblies": [
@@ -194,7 +194,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -216,7 +216,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -238,7 +238,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -260,7 +260,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -282,7 +282,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -304,7 +304,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -326,7 +326,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -348,7 +348,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -370,7 +370,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -392,7 +392,7 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.17": {
+      "CACSLibrary/1.4.18": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -406,7 +406,7 @@
     }
   },
   "libraries": {
-    "CACSLibrary/1.4.17": {
+    "CACSLibrary/1.4.18": {
       "type": "project",
       "path": "../CACSLibrary/project.json"
     },
@@ -449,7 +449,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "CACSLibrary >= 1.4.17-*"
+      "CACSLibrary >= 1.4.18-*"
     ],
     ".NETFramework,Version=v3.5": [
       "Autofac >= 2.6.3.862"

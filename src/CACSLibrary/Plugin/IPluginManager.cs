@@ -12,7 +12,7 @@ namespace CACSLibrary.Plugin
         /// 
         /// </summary>
         IEnumerable<PluginDescription> ReferencedPlugins { get; set; }
-
+        
         /// <summary>
         /// 
         /// </summary>

@@ -29,7 +29,7 @@ namespace CACSLibrary.Plugin
         {
             get { return _pluginManager; }
         }
-
+        
         /// <summary>
         /// 
         /// </summary>

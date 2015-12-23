@@ -1,5 +1,5 @@
 {
-  "version": "1.4.10-*",
+  "version": "1.4.11-*",
   "description": "CACSLibrary.Web ¿‡ø‚",
   "authors": [ "fyl08" ],
   "tags": [ "" ],
@@ -33,6 +33,6 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.4.17-*"
+    "CACSLibrary": "1.4.18-*"
   }
 }
