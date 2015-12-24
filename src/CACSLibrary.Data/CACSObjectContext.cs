@@ -19,35 +19,6 @@ namespace CACSLibrary.Data
     /// </summary>
     public class CACSObjectContext : DbContext, IDbContext
     {
-        #region nouse
-        //private IList<string> _entityAssemblies;
-
-        //public CACSObjectContext(string nameOrConnectionString, string[] entityAssemblies)
-        //    : base(nameOrConnectionString)
-        //{
-        //    this._entityAssemblies = entityAssemblies.ToList<string>();
-        //}
-
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    var source = new List<Type>();
-        //    foreach (string str in this._entityAssemblies)
-        //    {
-        //        var collection = from type in Assembly.Load(str).GetTypes()
-        //                         where !string.IsNullOrEmpty(type.Namespace)
-        //                         where ((type.BaseType != null) && type.BaseType.IsGenericType) && (type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>))
-        //                         select type;
-        //        source.AddRange(collection);
-        //    }
-        //    foreach (Type type in source.Distinct<Type>())
-        //    {
-        //        var typeInstance = Activator.CreateInstance(type);
-        //        modelBuilder.Configurations.Add((dynamic)typeInstance);
-        //    }
-        //    base.OnModelCreating(modelBuilder);
-        //}
-        #endregion
-
         /// <summary>
         /// 
         /// </summary>

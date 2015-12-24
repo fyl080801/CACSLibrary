@@ -2,23 +2,23 @@ using System;
 
 namespace CACSLibrary.Data
 {
-    /// <summary>
-    /// 
-    /// </summary>
+	/// <summary>
+	/// 
+	/// </summary>
 	public class EfDataProviderManager : BaseDataProviderManager
 	{
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="config"></param>
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="config"></param>
 		public EfDataProviderManager(DatabaseSetting config) : base(config)
 		{
 		}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		public override IDataProvider LoadDataProvider()
 		{
 			string providerName = base.Setting.DataProvider;
