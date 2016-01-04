@@ -1,42 +1,25 @@
-using Microsoft.CSharp.RuntimeBinder;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
-using System.Data.Entity.ModelConfiguration;
-using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace CACSLibrary.Data
 {
     /// <summary>
-    /// 
+    /// 映射对象上下文
     /// </summary>
     public class CACSObjectContext : DbContext, IDbContext
     {
         /// <summary>
-        /// 
+        /// 构造函数
         /// </summary>
-        /// <param name="connectionString"></param>
+        /// <param name="connectionString">数据库连接字符串</param>
         public CACSObjectContext(string connectionString)
             : base(connectionString)
         { }
-
-        public CACSLibrary.Data.BaseObjectEntity BaseObjectEntity
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
 
         /// <summary>
         /// 

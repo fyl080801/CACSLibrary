@@ -6,14 +6,14 @@ using System.Text;
 namespace CACSLibrary.Plugin
 {
     /// <summary>
-    /// 
+    /// 基础插件管理
     /// </summary>
     public abstract class BasePluginManager : IPluginManager
     {
         IEnumerable<PluginDescription> _referencedPlugins;
 
         /// <summary>
-        /// 
+        /// 引用的插件
         /// </summary>
         public IEnumerable<PluginDescription> ReferencedPlugins
         {
@@ -22,7 +22,7 @@ namespace CACSLibrary.Plugin
         }
 
         /// <summary>
-        /// 
+        /// 安装插件
         /// </summary>
         /// <param name="pluginId"></param>
         public void MakePluginInstalled(string pluginId)
@@ -59,7 +59,7 @@ namespace CACSLibrary.Plugin
         }
 
         /// <summary>
-        /// 
+        /// 卸载插件
         /// </summary>
         /// <param name="pluginId"></param>
         public void MakePluginUninstalled(string pluginId)
@@ -92,7 +92,7 @@ namespace CACSLibrary.Plugin
         }
 
         /// <summary>
-        /// 
+        /// 重置所有插件
         /// </summary>
         public void MakeAllPluginUninstalled()
         {
@@ -100,20 +100,23 @@ namespace CACSLibrary.Plugin
         }
 
         /// <summary>
-        /// 
+        /// 执行安装插件
         /// </summary>
-        /// <param name="pluginId"></param>
+        /// <param name="pluginId">插件Id</param>
+        /// <remarks>在派生类中实现针对不同平台安装的方法</remarks>
         protected abstract void PluginInstall(string pluginId);
 
         /// <summary>
-        /// 
+        /// 执行卸载插件
         /// </summary>
         /// <param name="pluginId"></param>
+        /// <remarks>在派生类中实现针对不同平台卸载的方法</remarks>
         protected abstract void PluginUninstall(string pluginId);
 
         /// <summary>
-        /// 
+        /// 执行所有插件卸载
         /// </summary>
+        /// <remarks>在派生类中实现针对不同平台重置所有插件的方法</remarks>
         protected abstract void AllPluginUninstall();
     }
 }

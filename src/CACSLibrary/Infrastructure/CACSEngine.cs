@@ -18,7 +18,7 @@ namespace CACSLibrary.Infrastructure
         private IContainerManager _containerManager;
 
         /// <summary>
-        /// 
+        /// 对象容器管理器
         /// </summary>
         public IContainerManager ContainerManager
         {
@@ -26,25 +26,33 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 引擎初始化
         /// </summary>
         /// <param name="config"></param>
         public virtual void Initialize(CACSConfig config)
         {
+            //初始化对象容器
             this._containerManager = this.InitializeContainer();
+            //注册类型查找
             this.RegisterTypeFinder();
+            //注册设置信息
             this.RegisterConfig(config);
+            //注册引擎
             this.RegisterEngine();
+            //注册缓存
             this.RegisterCache(config);
+            //注册配置文件管理
             this.RegisterProfile(config);
+            //注册容器依赖项
             this.RegisterDependency();
+            //运行启动任务
             this.RunStartupTasks();
         }
 
         /// <summary>
-        /// 
+        /// 初始化对象容器
         /// </summary>
-        /// <returns></returns>
+        /// <returns>对象容器</returns>
         protected virtual IContainerManager InitializeContainer()
         {
             EngineConfig engineConfig = ConfigurationManager.GetSection("engineConfig") as EngineConfig;
@@ -61,37 +69,37 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 返回指定类型的实例
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">类型</typeparam>
+        /// <returns>类型的实例</returns>
         public T Resolve<T>() where T : class
         {
             return this.ContainerManager.Resolve<T>();
         }
 
         /// <summary>
-        /// 
+        /// 返回指定类型的实例
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">类型</param>
+        /// <returns>类型的实例</returns>
         public object Resolve(Type type)
         {
             return this.ContainerManager.Resolve(type);
         }
 
         /// <summary>
-        /// 
+        /// 返回指定类型的所有实例
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">类型</typeparam>
+        /// <returns>实例</returns>
         public T[] ResolveAll<T>()
         {
             return this.ContainerManager.ResolveAll<T>();
         }
 
         /// <summary>
-        /// 
+        /// 注册类型查找
         /// </summary>
         protected virtual void RegisterTypeFinder()
         {
@@ -99,9 +107,9 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 注册设置信息
         /// </summary>
-        /// <param name="config"></param>
+        /// <param name="config">设置信息</param>
         protected virtual void RegisterConfig(CACSConfig config)
         {
             if (config != null)
@@ -113,7 +121,7 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 注册引擎
         /// </summary>
         protected virtual void RegisterEngine()
         {
@@ -121,9 +129,9 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 注册缓存管理
         /// </summary>
-        /// <param name="configuration"></param>
+        /// <param name="configuration">配置</param>
         protected virtual void RegisterCache(CACSConfig configuration)
         {
             if (configuration == null || string.IsNullOrEmpty(configuration.CacheType))
@@ -180,7 +188,7 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 注册配置文件管理
         /// </summary>
         /// <param name="configuration"></param>
         protected virtual void RegisterProfile(CACSConfig configuration)
@@ -203,7 +211,7 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 注册对象依赖项
         /// </summary>
         protected virtual void RegisterDependency()
         {
@@ -215,7 +223,7 @@ namespace CACSLibrary.Infrastructure
         }
 
         /// <summary>
-        /// 
+        /// 运行启动任务
         /// </summary>
         protected virtual void RunStartupTasks()
         {

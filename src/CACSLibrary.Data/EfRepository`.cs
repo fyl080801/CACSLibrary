@@ -8,9 +8,9 @@ using System.Threading;
 namespace CACSLibrary.Data
 {
     /// <summary>
-    /// 
+    /// EF数据仓库
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">数据对象类型</typeparam>
     public class EfRepository<T> : IRepository<T> where T : BaseObjectEntity
     {
         static readonly ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
@@ -18,16 +18,16 @@ namespace CACSLibrary.Data
         IDbSet<T> _entities;
 
         /// <summary>
-        /// 
+        /// 构造函数
         /// </summary>
-        /// <param name="context"></param>
+        /// <param name="context">数据访问上下文</param>
         public EfRepository(IDbContext context)
         {
             this._context = context;
         }
 
         /// <summary>
-        /// 
+        /// 数据库表映射
         /// </summary>
         public virtual IQueryable<T> Table
         {
@@ -55,17 +55,17 @@ namespace CACSLibrary.Data
         }
 
         /// <summary>
-        /// 
+        /// 通过Id获取对象
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Id</param>
+        /// <returns>数据对象</returns>
         public T GetById(object id)
         {
             return this.Entities.Find(id);
         }
 
         /// <summary>
-        /// 
+        /// 插入数据
         /// </summary>
         /// <param name="entity"></param>
         public void Insert(T entity)
@@ -96,7 +96,7 @@ namespace CACSLibrary.Data
         }
 
         /// <summary>
-        /// 
+        /// 更新数据
         /// </summary>
         /// <param name="entity"></param>
         public void Update(T entity)
@@ -123,7 +123,7 @@ namespace CACSLibrary.Data
         }
 
         /// <summary>
-        /// 
+        /// 删除数据
         /// </summary>
         /// <param name="entity"></param>
         public void Delete(T entity)
@@ -151,7 +151,7 @@ namespace CACSLibrary.Data
         }
 
         /// <summary>
-        /// 
+        /// 插入一组数据
         /// </summary>
         /// <param name="entities"></param>
         public void Insert(params T[] entities)
@@ -183,7 +183,7 @@ namespace CACSLibrary.Data
         }
 
         /// <summary>
-        /// 
+        /// 更新一组数据
         /// </summary>
         /// <param name="entities"></param>
         public void Update(params T[] entities)
@@ -196,7 +196,7 @@ namespace CACSLibrary.Data
         }
 
         /// <summary>
-        /// 
+        /// 删除一组数据
         /// </summary>
         /// <param name="entities"></param>
         public void Delete(params T[] entities)
