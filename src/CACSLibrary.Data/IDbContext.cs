@@ -7,7 +7,7 @@ namespace CACSLibrary.Data
     /// <summary>
     /// 
     /// </summary>
-    public interface IDbContext
+    public interface IDbContext : IDisposable
     {
         /// <summary>
         /// 
