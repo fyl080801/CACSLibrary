@@ -10,10 +10,12 @@ namespace CACSLibrary.Web
     public class WebHelper : IWebHelper
     {
         private readonly HttpContextBase _httpContext;
+
         public WebHelper(HttpContextBase httpContext)
         {
             this._httpContext = httpContext;
         }
+
         public string GetCurrentIpAddress()
         {
             if (((this._httpContext != null) && (this._httpContext.Request != null)) && (this._httpContext.Request.UserHostAddress != null))
@@ -22,6 +24,7 @@ namespace CACSLibrary.Web
             }
             return string.Empty;
         }
+
         public virtual string GetStoreHost()
         {
             string str = this.ServerVariables("HTTP_HOST");
@@ -36,6 +39,7 @@ namespace CACSLibrary.Web
             }
             return str2.ToLowerInvariant();
         }
+
         public virtual string GetThisPageUrl(bool includeQueryString)
         {
             string leftPart = string.Empty;
@@ -58,6 +62,7 @@ namespace CACSLibrary.Web
             }
             return leftPart.ToLowerInvariant();
         }
+
         public virtual string MapPath(string path)
         {
             if (HostingEnvironment.IsHosted)
@@ -68,6 +73,7 @@ namespace CACSLibrary.Web
             path = path.Replace("~/", "").TrimStart(new char[] { '/' }).Replace('/', '\\');
             return Path.Combine(baseDirectory, path);
         }
+
         public virtual void RestartAppDomain(bool makeRedirect = false, string redirectUrl = "")
         {
             if (WebCommonHelper.GetTrustLevel() > AspNetHostingPermissionLevel.Medium)
@@ -79,11 +85,11 @@ namespace CACSLibrary.Web
             {
                 if (!this.TryWriteWebConfig())
                 {
-                    throw new CACSException();
+                    throw new CACSException("重启web应用异常,无法访问 web.config");
                 }
                 if (!this.TryWriteGlobalAsax())
                 {
-                    throw new CACSException();
+                    throw new CACSException("重启web应用异常,无法访问 Global.asax");
                 }
             }
             if ((this._httpContext != null) && makeRedirect)
@@ -95,6 +101,7 @@ namespace CACSLibrary.Web
                 this._httpContext.Response.Redirect(redirectUrl, true);
             }
         }
+
         public virtual string ServerVariables(string name)
         {
             string str = string.Empty;
@@ -111,6 +118,7 @@ namespace CACSLibrary.Web
             }
             return str;
         }
+
         private bool TryWriteGlobalAsax()
         {
             try
@@ -123,6 +131,7 @@ namespace CACSLibrary.Web
                 return false;
             }
         }
+
         private bool TryWriteWebConfig()
         {
             try

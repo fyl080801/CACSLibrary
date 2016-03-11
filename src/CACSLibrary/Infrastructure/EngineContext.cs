@@ -5,17 +5,17 @@ using System.Runtime.CompilerServices;
 
 namespace CACSLibrary.Infrastructure
 {
-    /// <summary>
-    /// 引擎上下文
-    /// </summary>
-    /// <remarks>
-    /// 直接管理引擎的实例
-    /// </remarks>
+	/// <summary>
+	/// 引擎上下文
+	/// </summary>
+	/// <remarks>
+	/// 直接管理引擎的实例
+	/// </remarks>
 	public class EngineContext
 	{
-        /// <summary>
-        /// 获取当前程序执行的引擎
-        /// </summary>
+		/// <summary>
+		/// 获取当前程序执行的引擎
+		/// </summary>
 		public static IEngine Current
 		{
 			get
@@ -28,9 +28,9 @@ namespace CACSLibrary.Infrastructure
 			}
 		}
 
-        /// <summary>
-        /// 将当前加载的引擎初始化
-        /// </summary>
+		/// <summary>
+		/// 将当前加载的引擎初始化
+		/// </summary>
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public static void Initialize()
 		{
@@ -45,12 +45,12 @@ namespace CACSLibrary.Infrastructure
 			}
 		}
 
-        /// <summary>
-        /// 创建引擎
-        /// </summary>
-        /// <param name="config">配置</param>
-        /// <returns>引擎</returns>
-        /// <remarks>根据传递的配置中描述的引擎创建，默认为<see cref="CACSEngine"/></remarks>
+		/// <summary>
+		/// 创建引擎
+		/// </summary>
+		/// <param name="config">配置</param>
+		/// <returns>引擎</returns>
+		/// <remarks>根据传递的配置中描述的引擎创建，默认为<see cref="CACSEngine"/></remarks>
 		private static IEngine CreateEngine(CACSConfig config)
 		{
 			if (config == null || string.IsNullOrEmpty(config.EngineType))
@@ -69,10 +69,10 @@ namespace CACSLibrary.Infrastructure
 			return Activator.CreateInstance(type) as IEngine;
 		}
 
-        /// <summary>
-        /// 重置引擎
-        /// </summary>
-        /// <param name="engine">引擎</param>
+		/// <summary>
+		/// 重置引擎
+		/// </summary>
+		/// <param name="engine">引擎</param>
 		public static void Reset(IEngine engine)
 		{
 			Singleton<IEngine>.Instance = engine;

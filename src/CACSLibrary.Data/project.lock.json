@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -30,7 +30,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -57,7 +57,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -84,7 +84,7 @@
       }
     },
     ".NETFramework,Version=v4.6": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -111,7 +111,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -138,7 +138,7 @@
       }
     },
     ".NETFramework,Version=v4.5/win7-x86": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -165,7 +165,7 @@
       }
     },
     ".NETFramework,Version=v4.5/win7-x64": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
@@ -192,7 +192,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1/win7-x86": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -219,7 +219,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1/win7-x64": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "frameworkAssemblies": [
@@ -246,7 +246,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2/win7-x86": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -273,7 +273,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2/win7-x64": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "frameworkAssemblies": [
@@ -300,7 +300,7 @@
       }
     },
     ".NETFramework,Version=v4.6/win7-x86": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -327,7 +327,7 @@
       }
     },
     ".NETFramework,Version=v4.6/win7-x64": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "frameworkAssemblies": [
@@ -354,7 +354,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win7-x86": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -381,7 +381,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win7-x64": {
-      "CACSLibrary/1.4.18": {
+      "CACSLibrary/1.4.19": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "frameworkAssemblies": [
@@ -409,7 +409,7 @@
     }
   },
   "libraries": {
-    "CACSLibrary/1.4.18": {
+    "CACSLibrary/1.4.19": {
       "type": "project",
       "path": "../CACSLibrary/project.json"
     },

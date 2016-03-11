@@ -101,7 +101,7 @@ namespace CACSLibrary.Data
     /// </summary>
     /// <typeparam name="T"></typeparam>
     [Serializable]
-    public abstract class BaseEntity<T> : BaseObjectEntity where T : struct
+    public abstract class BaseEntity<T> : BaseObjectEntity
     {
         /// <summary>
         /// 
