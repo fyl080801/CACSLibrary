@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CACSLibrary.Silverlight.Maps"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <Style TargetType="local:CACSMaps">
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:CACSMaps">
+                    <Grid Background="{TemplateBinding Control.Background}">
+                        <ContentControl ContentControl.Name="BackLayer" />
+                        <Grid Grid.Name="Layers" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:BackgroundLayer">
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:BackgroundLayer">
+                    <Grid Grid.Name="Root" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:ItemsLayer">
+        <Setter Setter.Property="Control.Background" Setter.Value="#00FFFFFF" />
+        <Setter Setter.Property="ItemsControl.ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <local:NormalCanvas />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ItemsLayer">
+                    <ItemsPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

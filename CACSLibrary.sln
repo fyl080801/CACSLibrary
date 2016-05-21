@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2CBB505D-5FCB-4FED-8860-A0B6B5B16742}"
 EndProject
@@ -16,6 +16,16 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CACSLibrary.Web.Autofac", "src\CACSLibrary.Web.Autofac\CACSLibrary.Web.Autofac.xproj", "{A4425764-8D0A-40F3-BA57-2B536D78906F}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CACSLibrary.WCF", "src\CACSLibrary.WCF\CACSLibrary.WCF.xproj", "{B037BF2E-E98A-44F0-8D9C-15E4EE23653B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CACSLibrary.Silverlight", "src\CACSLibrary.Silverlight\CACSLibrary.Silverlight.csproj", "{9C169111-4E07-4BAC-A3E7-A9C7D58EB01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CACSLibrary.Silverlight.Maps", "src\CACSLibrary.Silverlight.Maps\CACSLibrary.Silverlight.Maps.csproj", "{578DAD9D-AA90-405A-94E0-48DCD8B9C0BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73AF6008-3AD2-4A21-981D-7B0F387A590B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CACSLibrary.Silverlight.Maps.Test", "test\CACSLibrary.Silverlight.Maps.Test\CACSLibrary.Silverlight.Maps.Test.csproj", "{D65C2B95-E940-4184-B3AE-3A667A7401BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CACSLibrary.Silverlight.Maps.Test.Web", "test\CACSLibrary.Silverlight.Maps.Test.Web\CACSLibrary.Silverlight.Maps.Test.Web.csproj", "{BD44CF93-66E6-4093-A36E-BC28B2EF86E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +57,22 @@ Global
 		{B037BF2E-E98A-44F0-8D9C-15E4EE23653B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B037BF2E-E98A-44F0-8D9C-15E4EE23653B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B037BF2E-E98A-44F0-8D9C-15E4EE23653B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C169111-4E07-4BAC-A3E7-A9C7D58EB01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C169111-4E07-4BAC-A3E7-A9C7D58EB01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C169111-4E07-4BAC-A3E7-A9C7D58EB01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C169111-4E07-4BAC-A3E7-A9C7D58EB01E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578DAD9D-AA90-405A-94E0-48DCD8B9C0BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578DAD9D-AA90-405A-94E0-48DCD8B9C0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578DAD9D-AA90-405A-94E0-48DCD8B9C0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578DAD9D-AA90-405A-94E0-48DCD8B9C0BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65C2B95-E940-4184-B3AE-3A667A7401BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65C2B95-E940-4184-B3AE-3A667A7401BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65C2B95-E940-4184-B3AE-3A667A7401BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65C2B95-E940-4184-B3AE-3A667A7401BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD44CF93-66E6-4093-A36E-BC28B2EF86E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD44CF93-66E6-4093-A36E-BC28B2EF86E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD44CF93-66E6-4093-A36E-BC28B2EF86E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD44CF93-66E6-4093-A36E-BC28B2EF86E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +84,9 @@ Global
 		{4532A483-6C42-41BA-A61B-D44A9B7D534F} = {2CBB505D-5FCB-4FED-8860-A0B6B5B16742}
 		{A4425764-8D0A-40F3-BA57-2B536D78906F} = {2CBB505D-5FCB-4FED-8860-A0B6B5B16742}
 		{B037BF2E-E98A-44F0-8D9C-15E4EE23653B} = {2CBB505D-5FCB-4FED-8860-A0B6B5B16742}
+		{9C169111-4E07-4BAC-A3E7-A9C7D58EB01E} = {2CBB505D-5FCB-4FED-8860-A0B6B5B16742}
+		{578DAD9D-AA90-405A-94E0-48DCD8B9C0BC} = {2CBB505D-5FCB-4FED-8860-A0B6B5B16742}
+		{D65C2B95-E940-4184-B3AE-3A667A7401BB} = {73AF6008-3AD2-4A21-981D-7B0F387A590B}
+		{BD44CF93-66E6-4093-A36E-BC28B2EF86E1} = {73AF6008-3AD2-4A21-981D-7B0F387A590B}
 	EndGlobalSection
 EndGlobal

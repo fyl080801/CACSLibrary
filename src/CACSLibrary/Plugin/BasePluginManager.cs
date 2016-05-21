@@ -27,35 +27,36 @@ namespace CACSLibrary.Plugin
         /// <param name="pluginId"></param>
         public void MakePluginInstalled(string pluginId)
         {
-            var plugins = this.ReferencedPlugins;
+            //var plugins = this.ReferencedPlugins;
             if (!this._referencedPlugins.Any(m => m.PluginId == pluginId))
                 throw new PluginException(pluginId, (int)PluginErrors.Other, "未找到插件");
 
-            var installPlugin = this._referencedPlugins.FirstOrDefault(m => m.PluginId == pluginId);
-            IEnumerable<PluginDescription> source =
-                from m in plugins
-                where m.Installed
-                select m;
-            StringBuilder messageBuilder = new StringBuilder("");
-            using (IEnumerator<Dependency> enumerator = installPlugin.DependentOn.GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    Dependency dependent = enumerator.Current;
-                    if (source.Count((PluginDescription m) => m.PluginId == dependent.PluginId && m.Version >= dependent.Version) <= 0)
-                    {
-                        messageBuilder.AppendLine(string.Format("{0} v{1}", dependent.PluginId, dependent.Version.ToString()));
-                    }
-                }
-            }
-            if (messageBuilder.Length <= 0)
-            {
-                this.PluginInstall(pluginId);
-                return;
-            }
-            StringBuilder outputBuilder = new StringBuilder("以下依赖项未安装:");
-            outputBuilder.AppendLine(messageBuilder.ToString());
-            throw new PluginException(installPlugin.PluginId, 1, outputBuilder.ToString());
+            //var installPlugin = this._referencedPlugins.FirstOrDefault(m => m.PluginId == pluginId);
+            //IEnumerable<PluginDescription> source =
+            //    from m in plugins
+            //    where m.Installed
+            //    select m;
+            this.PluginInstall(pluginId);
+            //StringBuilder messageBuilder = new StringBuilder("");
+            //using (IEnumerator<Dependency> enumerator = installPlugin.DependentOn.GetEnumerator())
+            //{
+            //    while (enumerator.MoveNext())
+            //    {
+            //        Dependency dependent = enumerator.Current;
+            //        if (source.Count((PluginDescription m) => m.PluginId == dependent.PluginId && m.Version >= dependent.Version) <= 0)
+            //        {
+            //            messageBuilder.AppendLine(string.Format("{0} v{1}", dependent.PluginId, dependent.Version.ToString()));
+            //        }
+            //    }
+            //}
+            //if (messageBuilder.Length <= 0)
+            //{
+            //    this.PluginInstall(pluginId);
+            //    return;
+            //}
+            //StringBuilder outputBuilder = new StringBuilder("以下依赖项未安装:");
+            //outputBuilder.AppendLine(messageBuilder.ToString());
+            //throw new PluginException(installPlugin.PluginId, 1, outputBuilder.ToString());
         }
 
         /// <summary>
