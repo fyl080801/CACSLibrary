@@ -11,20 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>339f35fc-3ea2-4424-bd13-329b8aee8fdd</ProjectGuid>
+    <ProjectGuid>f40c13cb-bc7d-4cf1-b96f-fa6ae2b027e9</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>CACSLibrary.Silverlight.Map.Package</Id>
+    <Id>CACSLibrary.Silverlight.Maps.Package</Id>
     <Version>1.0.0</Version>
-    <Title>CACSLibrary.Silverlight.Map.Package</Title>
+    <Title>CACSLibrary.Silverlight.Maps.Package</Title>
     <Authors>fyl08</Authors>
     <Owners>fyl08</Owners>
-    <Summary>CACSLibrary.Silverlight.Map.Package</Summary>
-    <Description>CACSLibrary.Silverlight.Map.Package</Description>
+    <Summary>CACSLibrary.Silverlight.Maps.Package</Summary>
+    <Description>CACSLibrary.Silverlight.Maps.Package</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>
@@ -32,7 +32,7 @@
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright © fyl08</Copyright>
-    <Tags>CACSLibrary.Silverlight.Map.Package</Tags>
+    <Tags>CACSLibrary.Silverlight.Maps.Package</Tags>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
