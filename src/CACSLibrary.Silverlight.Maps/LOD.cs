@@ -5,11 +5,8 @@ namespace CACSLibrary.Silverlight.Maps
     public struct LOD
     {
         private double _minSize;
-
         private double _maxSize;
-
         private double _minZoom;
-
         private double _maxZoom;
 
         public double MinSize

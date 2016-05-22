@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,10 +12,10 @@ using System.Windows.Shapes;
 
 namespace CACSLibrary.Silverlight.Maps
 {
-    public class ItemsLayer : ItemsControl, IMapLayer
+    public class ZoomLayer : ItemsControl, IMapLayer
     {
         private CACSMaps _maps;
-        private LocationCanvas _itemsHost;
+        private ZoomCanvas _itemsHost;
 
         public CACSMaps ParentMaps
         {
@@ -32,7 +33,7 @@ namespace CACSLibrary.Silverlight.Maps
             FrameworkElement frameworkElement = element as FrameworkElement;
             if (frameworkElement != null)
             {
-                this._itemsHost = (VisualTreeHelper.GetParent(frameworkElement) as LocationCanvas);
+                this._itemsHost = (VisualTreeHelper.GetParent(frameworkElement) as ZoomCanvas);
                 this.InitializeItemsHost();
             }
         }
@@ -46,9 +47,9 @@ namespace CACSLibrary.Silverlight.Maps
             this._itemsHost.ParentMaps = this._maps;
         }
 
-        public ItemsLayer()
+        public ZoomLayer()
         {
-            base.DefaultStyleKey = typeof(ItemsLayer);
+            base.DefaultStyleKey = typeof(ZoomLayer);
         }
     }
 }

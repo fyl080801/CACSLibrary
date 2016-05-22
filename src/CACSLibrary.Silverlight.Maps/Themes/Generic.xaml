@@ -8,28 +8,17 @@
             <Setter.Value>
                 <ControlTemplate TargetType="local:CACSMaps">
                     <Grid Background="{TemplateBinding Control.Background}">
-                        <ContentControl ContentControl.Name="BackLayer" />
                         <Grid Grid.Name="Layers" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="local:BackgroundLayer">
-        <Setter Setter.Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="local:BackgroundLayer">
-                    <Grid Grid.Name="Root" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
     <Style TargetType="local:ItemsLayer">
-        <Setter Setter.Property="Control.Background" Setter.Value="#00FFFFFF" />
         <Setter Setter.Property="ItemsControl.ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
-                    <local:NormalCanvas />
+                    <local:LocationCanvas />
                 </ItemsPanelTemplate>
             </Setter.Value>
         </Setter>
@@ -37,6 +26,40 @@
             <Setter.Value>
                 <ControlTemplate TargetType="local:ItemsLayer">
                     <ItemsPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:ZoomLayer">
+        <Setter Setter.Property="ItemsControl.ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <local:ZoomCanvas />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ZoomLayer">
+                    <ItemsPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:VirtualLayer">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:VirtualLayer">
+                    <local:ItemsLayer x:Name="ItemsHost" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:VectorLayer">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="local:VectorLayer">
+                    <local:VectorPanel x:Name="Canvas" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

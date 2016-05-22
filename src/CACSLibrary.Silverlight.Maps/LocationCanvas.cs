@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace CACSLibrary.Silverlight.Maps
 {
-    public class NormalCanvas : LayerCanvas
+    public class LocationCanvas : LayerCanvas
     {
         protected override Size ArrangeOverride(Size finalSize)
         {
@@ -21,18 +21,22 @@ namespace CACSLibrary.Silverlight.Maps
                 Point point = this._map.Projection.Project(this._map.Center);
                 double wScale = this._map.ActualWidth / 2.0 - point.X * avScale;
                 double hScale = this._map.ActualHeight / 2.0 - point.Y * avScale;
-                foreach (UIElement element in base.Children)
+                foreach (UIElement uiElement in base.Children)
                 {
-                    if (element != null)
+                    if (uiElement != null)
                     {
-                        Point latLong = LayerCanvas.GetPoint(element, LayerCanvas.CoordinateProperty);
-                        Point point2 = LayerCanvas.GetPoint(element, LayerCanvas.PinpointProperty);
-                        Point point3 = this._map.Projection.Project(latLong);
-                        if (double.IsNaN(point3.X) || double.IsNaN(point3.Y))
+                        Point coordinate = LayerCanvas.GetPoint(uiElement, LayerCanvas.CoordinateProperty);
+                        Point pinpoint = LayerCanvas.GetPoint(uiElement, LayerCanvas.PinpointProperty);
+                        Point projection = this._map.Projection.Project(coordinate);
+                        if (double.IsNaN(projection.X) || double.IsNaN(projection.Y))
                         {
-                            point3.X = (point3.Y = -32000.0);
+                            projection.X = (projection.Y = -32000.0);
                         }
-                        element.Arrange(new Rect(point3.X * avScale + wScale - point2.X, point3.Y * avScale + hScale - point2.Y, element.DesiredSize.Width, element.DesiredSize.Height));
+                        uiElement.Arrange(new Rect(
+                            projection.X * avScale + wScale - pinpoint.X,
+                            projection.Y * avScale + hScale - pinpoint.Y,
+                            uiElement.DesiredSize.Width,
+                            uiElement.DesiredSize.Height));
                     }
                 }
             }

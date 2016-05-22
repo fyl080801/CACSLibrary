@@ -58,13 +58,16 @@
     <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackgroundLayer.cs" />
-    <Compile Include="LabelPosition.cs" />
-    <Compile Include="VectorItem.cs" />
+    <Compile Include="VectorImage.cs" />
     <Compile Include="VectorPlacemark.cs" />
+    <Compile Include="VectorPolyline.cs" />
+    <Compile Include="ClippingEngine.cs" />
+    <Compile Include="IMapVirtualSource.cs" />
+    <Compile Include="LabelPosition.cs" />
+    <Compile Include="MapSlice.cs" />
+    <Compile Include="VectorItem.cs" />
     <Compile Include="VectorPanel.cs" />
     <Compile Include="CACSMaps.cs" />
-    <Compile Include="ImageBackgroundLayer.cs" />
     <Compile Include="IMapLayer.cs" />
     <Compile Include="IMapProjection.cs" />
     <Compile Include="ItemsLayer.cs" />
@@ -72,13 +75,17 @@
     <Compile Include="LayerCanvas.cs" />
     <Compile Include="LOD.cs" />
     <Compile Include="MercatorProjection.cs" />
-    <Compile Include="NormalCanvas.cs" />
+    <Compile Include="LocationCanvas.cs" />
     <Compile Include="PointConverter.cs" />
     <Compile Include="ProjectionFast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolsLayer.cs" />
     <Compile Include="VectorItemBase.cs" />
     <Compile Include="VectorLayer.cs" />
+    <Compile Include="VectorPolygon.cs" />
+    <Compile Include="VirtualLayer.cs" />
+    <Compile Include="ZoomCanvas.cs" />
+    <Compile Include="ZoomLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CACSLibrary.Silverlight\CACSLibrary.Silverlight.csproj">

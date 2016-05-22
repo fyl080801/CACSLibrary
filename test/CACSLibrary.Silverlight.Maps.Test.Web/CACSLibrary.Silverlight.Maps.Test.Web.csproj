@@ -62,6 +62,7 @@
     <Content Include="CACSLibrary.Silverlight.Maps.TestTestPage.aspx" />
     <Content Include="CACSLibrary.Silverlight.Maps.TestTestPage.html" />
     <Content Include="ClientBin\CACSLibrary.Silverlight.Maps.Test.xap" />
+    <Resource Include="QQ图片20160520011619.png" />
     <Content Include="Silverlight.js" />
     <Content Include="Web.config" />
   </ItemGroup>

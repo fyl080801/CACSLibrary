@@ -3,21 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
 using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Resources;
-using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace CACSLibrary.Silverlight.Maps
 {
@@ -61,7 +49,6 @@ namespace CACSLibrary.Silverlight.Maps
         public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register("ItemTemplate", typeof(DataTemplate), typeof(VectorLayer), new PropertyMetadata(new PropertyChangedCallback(VectorLayer.OnItemTemplateChanged)));
         public static readonly DependencyProperty ItemStyleProperty = DependencyProperty.Register("ItemStyle", typeof(Style), typeof(VectorLayer), new PropertyMetadata(new PropertyChangedCallback(VectorLayer.OnItemStyleChanged)));
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(VectorLayer), new PropertyMetadata(new PropertyChangedCallback(VectorLayer.OnItemsSourceChanged)));
-        public static readonly DependencyProperty UriSourceProperty = DependencyProperty.Register("UriSource", typeof(Uri), typeof(VectorLayer), new PropertyMetadata(new PropertyChangedCallback(VectorLayer.OnUriSourceChanged)));
         private CACSMaps _map;
         internal static Rect ClipRect = new Rect(5000.0, 5000.0, 10000.0, 10000.0);
         private bool _needUpdateCollection;
@@ -84,12 +71,6 @@ namespace CACSLibrary.Silverlight.Maps
         {
             get { return (IEnumerable)base.GetValue(VectorLayer.ItemsSourceProperty); }
             set { base.SetValue(VectorLayer.ItemsSourceProperty, value); }
-        }
-
-        public Uri UriSource
-        {
-            get { return (Uri)base.GetValue(VectorLayer.UriSourceProperty); }
-            set { base.SetValue(VectorLayer.UriSourceProperty, value); }
         }
 
         public ObservableCollection<VectorItemBase> Children
@@ -313,7 +294,7 @@ namespace CACSLibrary.Silverlight.Maps
         {
             if (this.dirty)
             {
-                UIElementCollection arg_16_0 = this._cnv.Children;
+                //UIElementCollection arg_16_0 = this._cnv.Children;
                 double zoom = this._map.Zoom;
                 Point point = this._map.GeographicToScreen(this._map.Center);
                 Point point2 = this._map.GeographicToScreen(this._cache.Center);
@@ -555,42 +536,43 @@ namespace CACSLibrary.Silverlight.Maps
             this.EndUpdate();
         }
 
-        private static void OnUriSourceChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            //VectorLayer vectorLayer = (VectorLayer)obj;
-            //vectorLayer.Children.Clear();
-            //if (vectorLayer.UriSource != null)
-            //{
-            //    if (!vectorLayer.UriSource.IsAbsoluteUri)
-            //    {
-            //        Uri uri = vectorLayer.UriSource;
-            //        if (!uri.ToString().Contains(";component/"))
-            //        {
-            //            Assembly assembly = Application.Current.GetType().Assembly;
-            //            string text = assembly.FullName.Split(new char[]
-            //            {
-            //                ','
-            //            })[0];
-            //            string text2 = string.Format(CultureInfo.InvariantCulture, "/{0};component/{1}", new object[]
-            //            {
-            //                text,
-            //                vectorLayer.UriSource.ToString()
-            //            });
-            //            uri = new Uri(text2, (UriKind)2);
-            //        }
-            //        StreamResourceInfo resourceStream = Application.GetResourceStream(uri);
-            //        Application.Current.GetType().Assembly.GetManifestResourceNames();
-            //        if (resourceStream != null && resourceStream.Stream != null)
-            //        {
-            //            vectorLayer.ReadFromStream(resourceStream.Stream);
-            //            return;
-            //        }
-            //    }
-            //    WebClient webClient = new WebClient();
-            //    webClient.OpenReadCompleted += new OpenReadCompletedEventHandler(vectorLayer.wc_OpenReadCompleted);
-            //    webClient.OpenReadAsync(vectorLayer.UriSource);
-            //}
-        }
+        #region nouse
+        //private static void OnUriSourceChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        //{
+        //    VectorLayer vectorLayer = (VectorLayer)obj;
+        //    vectorLayer.Children.Clear();
+        //    if (vectorLayer.UriSource != null)
+        //    {
+        //        if (!vectorLayer.UriSource.IsAbsoluteUri)
+        //        {
+        //            Uri uri = vectorLayer.UriSource;
+        //            if (!uri.ToString().Contains(";component/"))
+        //            {
+        //                Assembly assembly = Application.Current.GetType().Assembly;
+        //                string text = assembly.FullName.Split(new char[]
+        //                {
+        //                    ','
+        //                })[0];
+        //                string text2 = string.Format(CultureInfo.InvariantCulture, "/{0};component/{1}", new object[]
+        //                {
+        //                    text,
+        //                    vectorLayer.UriSource.ToString()
+        //                });
+        //                uri = new Uri(text2, (UriKind)2);
+        //            }
+        //            StreamResourceInfo resourceStream = Application.GetResourceStream(uri);
+        //            Application.Current.GetType().Assembly.GetManifestResourceNames();
+        //            if (resourceStream != null && resourceStream.Stream != null)
+        //            {
+        //                vectorLayer.ReadFromStream(resourceStream.Stream);
+        //                return;
+        //            }
+        //        }
+        //        WebClient webClient = new WebClient();
+        //        webClient.OpenReadCompleted += new OpenReadCompletedEventHandler(vectorLayer.wc_OpenReadCompleted);
+        //        webClient.OpenReadAsync(vectorLayer.UriSource);
+        //    }
+        //}
 
         //private void ReadFromStream(Stream stream)
         //{
@@ -638,21 +620,22 @@ namespace CACSLibrary.Silverlight.Maps
         //    this.OnUriSourceLoaded();
         //}
 
-        private void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
-        {
-            //if (!e.Cancelled)
-            //{
-            //    this.CACSBeginInvoke(delegate
-            //    {
-            //        if (e.Error == null)
-            //        {
-            //            this.ReadFromStream(e.Result);
-            //            return;
-            //        }
-            //        this.OnUriSourceFailed(e.Error);
-            //    });
-            //}
-        }
+        //private void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
+        //{
+        //    if (!e.Cancelled)
+        //    {
+        //        this.CACSBeginInvoke(delegate
+        //        {
+        //            if (e.Error == null)
+        //            {
+        //                this.ReadFromStream(e.Result);
+        //                return;
+        //            }
+        //            this.OnUriSourceFailed(e.Error);
+        //        });
+        //    }
+        //}
+        #endregion
 
         private static void OnItemsSourceChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {

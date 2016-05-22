@@ -4,32 +4,29 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Globalization;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 
 namespace CACSLibrary.Silverlight.Maps
 {
-    [ContentProperty(LayersElementName), TemplatePart(Name = ToolsElementName, Type = typeof(ToolsLayer)), TemplatePart(Name = LayersElementName, Type = typeof(Panel)), TemplatePart(Name = BackgroundElementName, Type = typeof(ContentControl)), TemplateVisualState(Name = "MouseOver", GroupName = "CommonStates")]
+    [ContentProperty(LayersElementName)]
+    [TemplatePart(Name = ToolsElementName, Type = typeof(ToolsLayer))]
+    [TemplatePart(Name = LayersElementName, Type = typeof(Panel))]
 
     public class CACSMaps : Control
     {
-        public const double MaxZoom = 20.0;
-        public const double MinZoom = 0.0;
-        public const double MaxLat = 85.05113;
-        public const double MinLat = -85.05113;
-        public const double MaxLong = 180.0;
-        public const double MinLong = -180.0;
+        internal const double MAXZOOM = 20.0;
+        internal const double MINZOOM = 0.0;
+        internal const double MaxLat = 85.05113;
+        internal const double MinLat = -85.05113;
+        internal const double MaxLong = 180.0;
+        internal const double MinLong = -180.0;
         private const double panSpeed = 5.0;
         internal const string LayersElementName = "Layers";
-        internal const string BackgroundElementName = "BackLayer";
         internal const string ToolsElementName = "Tools";
         private CACSMouseHelper _mouseHelper;
         private ObservableCollection<IMapLayer> _layers = new ObservableCollection<IMapLayer>();
@@ -43,9 +40,9 @@ namespace CACSLibrary.Silverlight.Maps
         private bool _panDown;
         internal bool _isLoaded;
         internal Panel _elementLayers;
-        internal ContentControl _backContent;
         internal ToolsLayer _elementTools;
-        public static readonly DependencyProperty BackLayerProperty = DependencyProperty.Register(BackgroundElementName, typeof(BackgroundLayer), typeof(CACSMaps), new PropertyMetadata(new PropertyChangedCallback(CACSMaps.BackLayerPropertyChanged)));
+        public static readonly DependencyProperty MaxZoomProperty = DependencyProperty.Register("MaxZoom", typeof(double), typeof(CACSMaps), new PropertyMetadata(CACSMaps.MAXZOOM));
+        public static readonly DependencyProperty MinZoomProperty = DependencyProperty.Register("MinZoom", typeof(double), typeof(CACSMaps), new PropertyMetadata(CACSMaps.MINZOOM));
         public static readonly DependencyProperty CenterProperty = DependencyProperty.Register("Center", typeof(Point), typeof(CACSMaps), new PropertyMetadata(new PropertyChangedCallback(CACSMaps.OnCenterPropertyChanged)));
         private bool _throwCenterChanged = true;
         public static readonly new DependencyProperty ProjectionProperty = DependencyProperty.Register("Projection", typeof(IMapProjection), typeof(CACSMaps), new PropertyMetadata(new PropertyChangedCallback(CACSMaps.OnProjectionPropertyChanged)));
@@ -61,19 +58,22 @@ namespace CACSLibrary.Silverlight.Maps
         public static readonly DependencyProperty IsMouseOverProperty = DependencyProperty.Register("IsMouseOver", typeof(bool), typeof(CACSMaps), new PropertyMetadata(new PropertyChangedCallback(CACSMaps.OnIsMouseOverPropertyChanged)));
         private bool _throwIsMouseOverChanged = true;
         internal static readonly DependencyProperty ForceMouseOverProperty = DependencyProperty.Register("ForceMouseOver", typeof(bool), typeof(CACSMaps), new PropertyMetadata(new PropertyChangedCallback(CACSMaps.OnForceMouseOverPropertyChanged)));
-        public static readonly DependencyProperty FocusCuesVisibilityProperty = DependencyProperty.Register("FocusCuesVisibility", typeof(Visibility), typeof(CACSMaps), new PropertyMetadata((Visibility)0));
         public event EventHandler<PropertyChangedEventArgs<Point>> CenterChanged;
         public event EventHandler<PropertyChangedEventArgs<double>> ZoomChanged;
         public event EventHandler<PropertyChangedEventArgs<double>> TargetZoomChanged;
         public event EventHandler<PropertyChangedEventArgs<Point>> TargetCenterChanged;
         public event EventHandler<PropertyChangedEventArgs<bool>> IsMouseOverChanged;
-        public event EventHandler BackLayerChanged;
 
-        [Category("cacs")]
-        public BackgroundLayer BackLayer
+        public double MaxZoom
         {
-            get { return (BackgroundLayer)base.GetValue(CACSMaps.BackLayerProperty); }
-            set { base.SetValue(CACSMaps.BackLayerProperty, value); }
+            get { return (double)base.GetValue(CACSMaps.MaxZoomProperty); }
+            set { base.SetValue(CACSMaps.MaxZoomProperty, value); }
+        }
+
+        public double MinZoom
+        {
+            get { return (double)base.GetValue(CACSMaps.MinZoomProperty); }
+            set { base.SetValue(CACSMaps.MinZoomProperty, value); }
         }
 
         public Collection<IMapLayer> Layers
@@ -156,12 +156,6 @@ namespace CACSLibrary.Silverlight.Maps
             set { base.SetValue(CACSMaps.ForceMouseOverProperty, value); }
         }
 
-        public Visibility FocusCuesVisibility
-        {
-            get { return (Visibility)base.GetValue(CACSMaps.FocusCuesVisibilityProperty); }
-            set { base.SetValue(CACSMaps.FocusCuesVisibilityProperty, value); }
-        }
-
         private void SetCustomDefaultValues()
         {
             //LicenseHelper.License(typeof(CACSMap), this);
@@ -210,17 +204,13 @@ namespace CACSLibrary.Silverlight.Maps
 
         private void ApplyClip()
         {
-            if (this._elementLayers != null && this.BackLayer != null)
+            if (this._elementLayers != null)
             {
-                Rect rect = new Rect(0.0, 0.0, base.ActualWidth, base.ActualHeight);
-                UIElement backLayer = this.BackLayer;
-                RectangleGeometry rectangleGeometry = new RectangleGeometry();
-                rectangleGeometry.Rect = rect;
-                backLayer.Clip = rectangleGeometry;
-                UIElement elementLayer = this._elementLayers;
-                RectangleGeometry rectangleGeometry2 = new RectangleGeometry();
-                rectangleGeometry2.Rect = rect;
-                elementLayer.Clip = rectangleGeometry2;
+                RectangleGeometry rectGeo = new RectangleGeometry
+                {
+                    Rect = new Rect(0.0, 0.0, base.ActualWidth, base.ActualHeight)
+                };
+                this._elementLayers.Clip = rectGeo;
             }
         }
 
@@ -238,16 +228,6 @@ namespace CACSLibrary.Silverlight.Maps
             this._layers.CollectionChanged += new NotifyCollectionChangedEventHandler(this.LayersCollectionChanged);
         }
 
-        private void InitializeBackPart()
-        {
-            if (this.BackLayer != null)
-            {
-                this.BackLayer.ParentMaps = this;
-                this._backContent.Content = this.BackLayer;
-                this._isLoaded = true;
-            }
-        }
-
         private void InitializeToolsPart()
         {
             this._elementTools.ParentMaps = this;
@@ -262,16 +242,16 @@ namespace CACSLibrary.Silverlight.Maps
         public Point GeographicToScreen(Point latLong)
         {
             double num = base.ActualWidth / this.ViewportWidth;
-            Point point = this.Projection.Project(this.Center);
-            Point point2 = this.Projection.Project(latLong);
-            return new Point((point2.X - point.X) * num + base.ActualWidth * 0.5, (point2.Y - point.Y) * num + base.ActualHeight * 0.5);
+            Point center = this.Projection.Project(this.Center);
+            Point coodinate = this.Projection.Project(latLong);
+            return new Point((coodinate.X - center.X) * num + base.ActualWidth * 0.5, (coodinate.Y - center.Y) * num + base.ActualHeight * 0.5);
         }
 
         public Point ScreenToLogic(Point point)
         {
-            Point point2 = this.Projection.Project(this.Center);
+            Point center = this.Projection.Project(this.Center);
             double num = this.ViewportWidth / base.ActualWidth;
-            return new Point((point.X - base.ActualWidth * 0.5) * num + point2.X, (point.Y - base.ActualHeight * 0.5) * num + point2.Y);
+            return new Point((point.X - base.ActualWidth * 0.5) * num + center.X, (point.Y - base.ActualHeight * 0.5) * num + center.Y);
         }
 
         public Point LogicToScreen(Point point)
@@ -282,9 +262,9 @@ namespace CACSLibrary.Silverlight.Maps
         public static double Distance(Point latLong1, Point latLong2)
         {
             double num = 6371000.0;
-            double num2 = (latLong2.Y - latLong1.Y) * ProjectionFast.toRad;
-            double num3 = (latLong2.X - latLong1.X) * ProjectionFast.toRad;
-            double num4 = Math.Sin(num2 * 0.5) * Math.Sin(num2 * 0.5) + Math.Cos(latLong1.Y * ProjectionFast.toRad) * Math.Cos(latLong2.Y * ProjectionFast.toRad) * Math.Sin(num3 * 0.5) * Math.Sin(num3 * 0.5);
+            double radX = (latLong2.X - latLong1.X) * ProjectionFast.toRad;
+            double radY = (latLong2.Y - latLong1.Y) * ProjectionFast.toRad;
+            double num4 = Math.Sin(radY * 0.5) * Math.Sin(radY * 0.5) + Math.Cos(latLong1.Y * ProjectionFast.toRad) * Math.Cos(latLong2.Y * ProjectionFast.toRad) * Math.Sin(radX * 0.5) * Math.Sin(radX * 0.5);
             double num5 = 2.0 * Math.Atan2(Math.Sqrt(num4), Math.Sqrt(1.0 - num4));
             return num * num5;
         }
@@ -299,7 +279,9 @@ namespace CACSLibrary.Silverlight.Maps
 
         private void OnTargetCenterChanged(Point oldValue)
         {
-            this.TargetCenter = new Point(Math.Min(MaxLong, Math.Max(MinLong, this.TargetCenter.X)), Math.Min(MaxLat, Math.Max(MinLat, this.TargetCenter.Y)));
+            this.TargetCenter = new Point(
+                Math.Min(MaxLong, Math.Max(MinLong, this.TargetCenter.X)),
+                Math.Min(MaxLat, Math.Max(MinLat, this.TargetCenter.Y)));
             this._centering = true;
             this.BeginMoving();
         }
@@ -316,7 +298,9 @@ namespace CACSLibrary.Silverlight.Maps
 
         private void OnCenterChanged(Point oldValue)
         {
-            this.Center = new Point(Math.Min(MaxLong, Math.Max(MinLong, this.Center.X)), Math.Min(MaxLat, Math.Max(MinLat, this.Center.Y)));
+            this.Center = new Point(
+                Math.Min(MaxLong, Math.Max(MinLong, this.Center.X)),
+                Math.Min(MaxLat, Math.Max(MinLat, this.Center.Y)));
             if (!this._centering)
             {
                 this.TargetCenter = this.Center;
@@ -472,32 +456,32 @@ namespace CACSLibrary.Silverlight.Maps
             Point point = this.Projection.Project(this.TargetCenter);
             switch (e.Key)
             {
-                case (Key)10:
+                case Key.PageUp:
                     point.Y = point.Y - this.ViewportHeight;
                     this.TargetCenter = this.Projection.Unproject(point);
                     break;
-                case (Key)11:
+                case Key.PageDown:
                     point.Y = point.Y + this.ViewportHeight;
                     this.TargetCenter = this.Projection.Unproject(point);
                     break;
-                case (Key)12:
+                case Key.End:
                     point.X = point.X + this.ViewportWidth;
                     this.TargetCenter = this.Projection.Unproject(point);
                     break;
-                case (Key)13:
+                case Key.Home:
                     point.X = point.X - this.ViewportWidth;
                     this.TargetCenter = this.Projection.Unproject(point);
                     break;
-                case (Key)14:
+                case Key.Left:
                     this._panLeft = true;
                     break;
-                case (Key)15:
+                case Key.Up:
                     this._panUp = true;
                     break;
-                case (Key)16:
+                case Key.Right:
                     this._panRight = true;
                     break;
-                case (Key)17:
+                case Key.Down:
                     this._panDown = true;
                     break;
             }
@@ -508,16 +492,16 @@ namespace CACSLibrary.Silverlight.Maps
         {
             switch (e.Key)
             {
-                case (Key)14:
+                case Key.Left:
                     this._panLeft = false;
                     return;
-                case (Key)15:
+                case Key.Up:
                     this._panUp = false;
                     return;
-                case (Key)16:
+                case Key.Right:
                     this._panRight = false;
                     return;
-                case (Key)17:
+                case Key.Down:
                     this._panDown = false;
                     return;
                 default:
@@ -552,26 +536,26 @@ namespace CACSLibrary.Silverlight.Maps
                 this.Center = this.Projection.Unproject(new Point(point.X - this.ViewportWidth * (this._zoomPoint.X - 0.5), point.Y - this.ViewportHeight * (this._zoomPoint.Y - 0.5)));
                 this._centering = false;
             }
-            Point point2 = default(Point);
+            Point panPoint = default(Point);
             if (this._panLeft)
             {
-                point2.X = -panSpeed;
+                panPoint.X = -panSpeed;
             }
             else if (this._panRight)
             {
-                point2.X = panSpeed;
+                panPoint.X = panSpeed;
             }
             if (this._panUp)
             {
-                point2.Y = -panSpeed;
+                panPoint.Y = -panSpeed;
             }
             else if (this._panDown)
             {
-                point2.Y = panSpeed;
+                panPoint.Y = panSpeed;
             }
-            if (point2 != default(Point))
+            if (panPoint != default(Point))
             {
-                this.Center = this.ScreenToGeographic(new Point(base.ActualWidth / 2.0 + point2.X, base.ActualHeight / 2.0 + point2.Y));
+                this.Center = this.ScreenToGeographic(new Point(base.ActualWidth / 2.0 + panPoint.X, base.ActualHeight / 2.0 + panPoint.Y));
                 this._centering = false;
             }
             if (this._centering)
@@ -611,12 +595,12 @@ namespace CACSLibrary.Silverlight.Maps
 
         private static void OnCenterPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             Point oldValue = (Point)e.OldValue;
-            cacsMaps.OnCenterChanged(oldValue);
-            if (cacsMaps.CenterChanged != null && cacsMaps._throwCenterChanged)
+            maps.OnCenterChanged(oldValue);
+            if (maps.CenterChanged != null && maps._throwCenterChanged)
             {
-                cacsMaps.CenterChanged.Invoke(cacsMaps, new PropertyChangedEventArgs<Point>
+                maps.CenterChanged.Invoke(maps, new PropertyChangedEventArgs<Point>
                 {
                     OldValue = (Point)e.OldValue,
                     NewValue = (Point)e.NewValue
@@ -626,19 +610,19 @@ namespace CACSLibrary.Silverlight.Maps
 
         private static void OnProjectionPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             IMapProjection oldValue = (IMapProjection)e.OldValue;
-            cacsMaps.OnProjectionChanged(oldValue);
+            maps.OnProjectionChanged(oldValue);
         }
 
         private static void OnZoomPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             double oldValue = (double)e.OldValue;
-            cacsMaps.OnZoomChanged(oldValue);
-            if (cacsMaps.ZoomChanged != null && cacsMaps._throwZoomChanged)
+            maps.OnZoomChanged(oldValue);
+            if (maps.ZoomChanged != null && maps._throwZoomChanged)
             {
-                cacsMaps.ZoomChanged.Invoke(cacsMaps, new PropertyChangedEventArgs<double>
+                maps.ZoomChanged.Invoke(maps, new PropertyChangedEventArgs<double>
                 {
                     OldValue = (double)e.OldValue,
                     NewValue = (double)e.NewValue
@@ -648,12 +632,12 @@ namespace CACSLibrary.Silverlight.Maps
 
         private static void OnTargetZoomPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             double oldValue = (double)e.OldValue;
-            cacsMaps.OnTargetZoomChanged(oldValue);
-            if (cacsMaps.TargetZoomChanged != null && cacsMaps._throwTargetZoomChanged)
+            maps.OnTargetZoomChanged(oldValue);
+            if (maps.TargetZoomChanged != null && maps._throwTargetZoomChanged)
             {
-                cacsMaps.TargetZoomChanged.Invoke(cacsMaps, new PropertyChangedEventArgs<double>
+                maps.TargetZoomChanged.Invoke(maps, new PropertyChangedEventArgs<double>
                 {
                     OldValue = (double)e.OldValue,
                     NewValue = (double)e.NewValue
@@ -663,26 +647,26 @@ namespace CACSLibrary.Silverlight.Maps
 
         private static void OnShowToolsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             bool oldValue = (bool)e.OldValue;
-            cacsMaps.OnShowToolsChanged(oldValue);
+            maps.OnShowToolsChanged(oldValue);
         }
 
         private static void OnTargetZoomSpeedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             double oldValue = (double)e.OldValue;
-            cacsMaps.OnTargetZoomSpeedChanged(oldValue);
+            maps.OnTargetZoomSpeedChanged(oldValue);
         }
 
         private static void OnTargetCenterPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             Point oldValue = (Point)e.OldValue;
-            cacsMaps.OnTargetCenterChanged(oldValue);
-            if (cacsMaps.TargetCenterChanged != null && cacsMaps._throwTargetCenterChanged)
+            maps.OnTargetCenterChanged(oldValue);
+            if (maps.TargetCenterChanged != null && maps._throwTargetCenterChanged)
             {
-                cacsMaps.TargetCenterChanged.Invoke(cacsMaps, new PropertyChangedEventArgs<Point>
+                maps.TargetCenterChanged.Invoke(maps, new PropertyChangedEventArgs<Point>
                 {
                     OldValue = (Point)e.OldValue,
                     NewValue = (Point)e.NewValue
@@ -692,38 +676,29 @@ namespace CACSLibrary.Silverlight.Maps
 
         private static void OnTargetCenterSpeedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
+            CACSMaps maps = d as CACSMaps;
             double oldValue = (double)e.OldValue;
-            cacsMaps.OnTargetCenterSpeedChanged(oldValue);
+            maps.OnTargetCenterSpeedChanged(oldValue);
         }
 
         private static void OnIsMouseOverPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
-            if (cacsMaps.IsMouseOverChanged != null && cacsMaps._throwIsMouseOverChanged)
+            CACSMaps maps = d as CACSMaps;
+            if (maps.IsMouseOverChanged != null && maps._throwIsMouseOverChanged)
             {
-                cacsMaps.IsMouseOverChanged.Invoke(cacsMaps, new PropertyChangedEventArgs<bool>
+                maps.IsMouseOverChanged.Invoke(maps, new PropertyChangedEventArgs<bool>
                 {
                     OldValue = (bool)e.OldValue,
                     NewValue = (bool)e.NewValue
                 });
             }
-            cacsMaps.ChangeVisualStateCommon(true);
+            maps.ChangeVisualStateCommon(true);
         }
 
         private static void OnForceMouseOverPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            CACSMaps cacsMaps = d as CACSMaps;
-            cacsMaps.ChangeVisualStateCommon(true);
-        }
-
-        private void OnBackLayerChanged()
-        {
-            if (this.BackLayer != null)
-            {
-                this.TargetCenter = new Point(0.0, 0.0);
-                this._isLoaded = true;
-            }
+            CACSMaps maps = d as CACSMaps;
+            maps.ChangeVisualStateCommon(true);
         }
 
         private void CACSControl_MouseLeave(object sender, MouseEventArgs e)
@@ -762,11 +737,6 @@ namespace CACSLibrary.Silverlight.Maps
             if (this._elementLayers != null)
             {
                 this.InitializeLayersPart();
-            }
-            this._backContent = this.GetTemplateChild<ContentControl>(BackgroundElementName, false, ref empty);
-            if (this._backContent != null)
-            {
-                this.InitializeBackPart();
             }
             this._elementTools = this.GetTemplateChild<ToolsLayer>(ToolsElementName, false, ref empty);
             if (this._elementTools != null)
@@ -808,16 +778,6 @@ namespace CACSLibrary.Silverlight.Maps
         private static Storyboard GetTemplateChildResource(FrameworkElement root, string resourceName, bool required, ref string errors)
         {
             return CACSMaps.GetTemplateChildResource<Storyboard>(root, resourceName, required, ref errors);
-        }
-
-        private static void BackLayerPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            CACSMaps sender = d as CACSMaps;
-            if (sender.BackLayerChanged != null)
-            {
-                sender.BackLayerChanged(sender, EventArgs.Empty);
-            }
-            sender.OnBackLayerChanged();
         }
     }
 }

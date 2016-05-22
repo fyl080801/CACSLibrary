@@ -3,18 +3,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:maps="clr-namespace:CACSLibrary.Silverlight.Maps;assembly=CACSLibrary.Silverlight.Maps" x:Class="CACSLibrary.Silverlight.Maps.Test.MainPage"
+    xmlns:map="clr-namespace:CACSLibrary.Silverlight.Maps;assembly=CACSLibrary.Silverlight.Maps" x:Class="CACSLibrary.Silverlight.Maps.Test.MainPage"
+    xmlns:m="clr-namespace:MapControl;assembly=MapControl.Silverlight"
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
 
     <Grid x:Name="LayoutRoot" Background="White">
-        <maps:CACSMaps >
-            <maps:CACSMaps.BackLayer>
-                <maps:ImageBackgroundLayer Source="QQ图片20160520011619.png"/>
-            </maps:CACSMaps.BackLayer>
-            <maps:ItemsLayer>
-                <Button Content="aaa"/>
-            </maps:ItemsLayer>
-        </maps:CACSMaps>
+        <!--<m:Map x:Name="map" MaxZoomLevel="4" AnimationDuration="0" Heading="1">
+            <m:Map.Center>
+                <m:Location Longitude="8.2" Latitude="53.5"/>
+            </m:Map.Center>
+            -->
+        <!--<Button Width="20" Height="20" RenderTransform="{Binding ScaleTransform, ElementName=map, Mode=OneWay}">sssss</Button>-->
+        <!--
+            <Image m:MapPanel.Location="85,-85" Source="QQ图片20160520011619.png" RenderTransform="{Binding ViewportTransform, ElementName=map}" ></Image>
+            <m:Pushpin m:MapPanel.Location="0,0" Background="Yellow" Foreground="Blue" Content="N 53° 30' E 8° 12'"/>
+        </m:Map>-->
+        <map:CACSMaps MaxZoom="4">
+            <map:CACSMaps.Layers>
+                <map:ZoomLayer>
+                    <Image Source="QQ图片20160520011619.png" map:LayerCanvas.Pinpoint="700,500"/>
+                </map:ZoomLayer>
+                <map:ItemsLayer>
+                    <Button Content="aaa" map:LayerCanvas.Coordinate="12,-50" />
+                </map:ItemsLayer>
+            </map:CACSMaps.Layers>
+        </map:CACSMaps>
     </Grid>
 </UserControl>
