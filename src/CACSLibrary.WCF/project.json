@@ -2,9 +2,11 @@
   "version": "1.0.5-*",
   "description": "CACSLibrary.WCF toolkit",
   "authors": [ "fyl08" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "packOptions": {
+    "tags": [ "" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
   "frameworks": {
     "net35": {
       "frameworkAssemblies": { "System.ServiceModel": "3.0.0.0" }

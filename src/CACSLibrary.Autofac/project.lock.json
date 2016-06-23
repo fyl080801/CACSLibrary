@@ -14,16 +14,30 @@
           "lib/NET35/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
-          "System.XML",
           "System.Xml.Linq"
-        ]
+        ],
+        "compile": {
+          "net35/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net35/CACSLibrary.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.5": {
@@ -36,16 +50,30 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
-          "System.XML",
           "System.Xml.Linq"
-        ]
+        ],
+        "compile": {
+          "net45/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net45/CACSLibrary.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.5.1": {
@@ -58,16 +86,30 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
-          "System.XML",
           "System.Xml.Linq"
-        ]
+        ],
+        "compile": {
+          "net451/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net451/CACSLibrary.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.5.2": {
@@ -80,16 +122,30 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
-          "System.XML",
           "System.Xml.Linq"
-        ]
+        ],
+        "compile": {
+          "net452/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net452/CACSLibrary.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.6": {
@@ -102,16 +158,31 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml",
           "System.Xml.Linq"
-        ]
+        ],
+        "compile": {
+          "net46/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net46/CACSLibrary.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.6.1": {
@@ -124,295 +195,38 @@
           "lib/net40/Autofac.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml",
           "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v3.5/win7-x86": {
-      "Autofac/2.6.3.862": {
-        "type": "package",
+        ],
         "compile": {
-          "lib/NET35/Autofac.Configuration.dll": {},
-          "lib/NET35/Autofac.dll": {}
+          "net461/CACSLibrary.dll": {}
         },
         "runtime": {
-          "lib/NET35/Autofac.Configuration.dll": {},
-          "lib/NET35/Autofac.dll": {}
+          "net461/CACSLibrary.dll": {}
         }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v3.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v3.5/win7-x64": {
-      "Autofac/2.6.3.862": {
-        "type": "package",
-        "compile": {
-          "lib/NET35/Autofac.Configuration.dll": {},
-          "lib/NET35/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/NET35/Autofac.Configuration.dll": {},
-          "lib/NET35/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v3.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.5/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.5/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.5.1/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.5.1/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.5.2/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.5.2/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.6/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.6/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.6.1/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.6.1/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
       }
     }
   },
   "libraries": {
-    "CACSLibrary/1.4.19": {
-      "type": "project",
-      "path": "../CACSLibrary/project.json"
-    },
     "Autofac/2.6.3.862": {
-      "type": "package",
       "sha512": "Any2sfKdLl0Tkv6K5vslKEjrgWqEPwNlHpxHRHNpvy+AYmyq11uNak1z2fOs9Yu5wdaUteiZeTsCrDZR9FTJ7g==",
+      "type": "package",
       "files": [
         "Autofac.2.6.3.862.nupkg",
         "Autofac.2.6.3.862.nupkg.sha512",
@@ -425,17 +239,17 @@
         "lib/NET40/Autofac.xml",
         "lib/SL3-WP/Autofac.dll",
         "lib/SL3-WP/Autofac.xml",
-        "lib/SL4/Autofac.dll",
-        "lib/SL4/Autofac.xml",
         "lib/SL4-WindowsPhone/Autofac.dll",
         "lib/SL4-WindowsPhone/Autofac.xml",
         "lib/SL4-WindowsPhone71/Autofac.dll",
-        "lib/SL4-WindowsPhone71/Autofac.xml"
+        "lib/SL4-WindowsPhone71/Autofac.xml",
+        "lib/SL4/Autofac.dll",
+        "lib/SL4/Autofac.xml"
       ]
     },
     "Autofac/3.5.2": {
-      "type": "package",
       "sha512": "pGR5LjY8T/16x6SkJNd7u6EjQnE4C7JS0BZJ7Yl7pt313gIUZ/2ZnPSOIM5eaIA7ArxaudlyyLvAT4ayX5UJ/A==",
+      "type": "package",
       "files": [
         "Autofac.3.5.2.nupkg",
         "Autofac.3.5.2.nupkg.sha512",
@@ -445,11 +259,25 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.xml"
       ]
+    },
+    "netfx-System.Xml.XmlSerializer/1.1.0": {
+      "sha512": "Ig5u8iK12D1qcr0VBtgHOz1YzWo9seXvd9iZnbyrtrfatC00m3XRkQ0vaRtSC3WHLfCA079EVnbEEOY0T5KAYQ==",
+      "type": "package",
+      "files": [
+        "content/netfx/System/Xml/XmlSerializer.cs",
+        "netfx-System.Xml.XmlSerializer.1.1.0.nupkg.sha512",
+        "netfx-System.Xml.XmlSerializer.nuspec"
+      ]
+    },
+    "CACSLibrary/1.4.22": {
+      "type": "project",
+      "path": "../CACSLibrary/project.json",
+      "msbuildProject": "../CACSLibrary/CACSLibrary.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "CACSLibrary >= 1.4.18-*"
+      "CACSLibrary >= 1.4.22-*"
     ],
     ".NETFramework,Version=v3.5": [
       "Autofac >= 2.6.3.862"
@@ -469,5 +297,7 @@
     ".NETFramework,Version=v4.6.1": [
       "Autofac >= 3.5.2"
     ]
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }

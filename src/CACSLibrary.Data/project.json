@@ -2,9 +2,11 @@
   "version": "1.2.6-*",
   "description": "CACSLibrary.Data toolkit",
   "authors": [ "fengyl" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "packOptions": {
+    "tags": [ "" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
   "frameworks": {
     "net45": {
       "frameworkAssemblies": { "System.Transactions": "4.0.0.0" }

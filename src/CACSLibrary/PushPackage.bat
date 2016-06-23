@@ -1,1 +1,0 @@
-nuget push %1artifacts\bin\%2\%3\%2.1.4.17.nupkg 123456 -S http://192.168.101.237/library

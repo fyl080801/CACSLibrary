@@ -53,13 +53,15 @@ namespace CACSLibrary.Silverlight.Maps
 
         public Point Project(Point latLong)
         {
-            double num = Math.Sin(latLong.Y * toRad);
-            return new Point(latLong.X * this.ax + this.bx, Math.Log((1.0 + num) / (1.0 - num)) * this.ay + this.by);
+            //double num = Math.Sin(latLong.Y * toRad);
+            //return new Point(latLong.X * this.ax + this.bx, Math.Log((1.0 + num) / (1.0 - num)) * this.ay + this.by);
+            return new Point(latLong.X * this.ax + this.bx, latLong.Y * this.ay + this.by);
         }
 
         public Point Unproject(Point point)
         {
-            return new Point((point.X - this._offsetX) * toDeg / this._scaleX, Math.Atan(Math.Sinh((point.Y - this._offsetY) / this._scaleY)) * toDeg);
+            //return new Point((point.X - this._offsetX) * toDeg / this._scaleX, Math.Atan(Math.Sinh((point.Y - this._offsetY) / this._scaleY)) * toDeg);
+            return new Point((point.X - this._offsetX) * toDeg / this._scaleX, (point.Y - this._offsetY) * toDeg / this._scaleY);
         }
     }
 }

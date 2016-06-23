@@ -223,6 +223,40 @@ namespace CACSLibrary.Autofac
             }
             return result;
         }
+
+        public void RegisterDelegate<TService>(Func<IContainerManager, TService> func, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Singleton)
+        {
+            ContainerBuilder builder = new ContainerBuilder();
+            var regis = builder.Register(c => func(this)).As<TService>();
+            switch (lifeStyle)
+            {
+                case ComponentLifeStyle.Singleton:
+                    regis = regis.SingleInstance();
+                    break;
+                case ComponentLifeStyle.Transient:
+                    regis = regis.InstancePerDependency();
+                    break;
+                case ComponentLifeStyle.LifetimeScope:
+                    regis = regis.InstancePerLifetimeScope();
+                    break;
+                default:
+                    regis = regis.SingleInstance();
+                    break;
+            }
+            builder.Update(this.Container);
+        }
+
+        //public void RegisterComponentInstance<TService>(Func<IContainerManager, TService> implementation, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Singleton)
+        //{
+        //    var instance = implementation.Invoke(this);
+        //    RegisterComponentInstance<TService>(instance, instance.GetType().FullName, lifeStyle);
+        //}
+
+        //public void RegisterComponentInstance(Func<IContainerManager, object> implementation, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Singleton)
+        //{
+        //    var instance = implementation.Invoke(this);
+        //    RegisterComponentInstance(instance, instance.GetType().FullName, lifeStyle);
+        //}
     }
 
     public static class ContainerManagerExtensions

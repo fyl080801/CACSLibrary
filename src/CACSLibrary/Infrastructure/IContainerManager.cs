@@ -72,6 +72,15 @@ namespace CACSLibrary.Infrastructure
         /// 
         /// </summary>
         /// <typeparam name="TService"></typeparam>
+        /// <param name="implementation"></param>
+        /// <param name="key"></param>
+        /// <param name="lifeStyle"></param>
+        void RegisterDelegate<TService>(Func<IContainerManager, TService> func, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Singleton);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TService"></typeparam>
         /// <typeparam name="TImplementation"></typeparam>
         /// <param name="properties"></param>
         /// <param name="key"></param>

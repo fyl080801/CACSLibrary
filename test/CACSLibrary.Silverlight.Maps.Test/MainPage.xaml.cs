@@ -28,5 +28,10 @@ namespace CACSLibrary.Silverlight.Maps.Test
             //vec.Points.Add(new Point(0, 50));
             //vl.Children.Add(vec as VectorItemBase);
         }
+
+        private void map_Loaded(object sender, RoutedEventArgs e)
+        {
+            map.Zoom = 1;
+        }
     }
 }

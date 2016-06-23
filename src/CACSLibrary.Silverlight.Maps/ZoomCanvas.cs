@@ -32,8 +32,7 @@ namespace CACSLibrary.Silverlight.Maps
             {
                 this._map.ZoomChanged += delegate
                 {
-                    this._scaleTransform.ScaleX = 1.0 / this._map.ViewportWidth;
-                    this._scaleTransform.ScaleY = 1.0 / this._map.ViewportWidth;
+                    this._scaleTransform.ScaleX = this._scaleTransform.ScaleY = 1.0 / this._map.ViewportWidth;
                 };
             }
         }

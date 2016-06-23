@@ -2,9 +2,11 @@
   "version": "1.4.12-*",
   "description": "CACSLibrary.Web toolkit",
   "authors": [ "fyl08" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "packOptions": {
+    "tags": [ "" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
   "frameworks": {
     "net45": {
       "frameworkAssemblies": {

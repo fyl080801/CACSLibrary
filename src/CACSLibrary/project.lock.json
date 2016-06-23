@@ -2,69 +2,109 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETFramework,Version=v3.5": {},
-    ".NETFramework,Version=v4.5": {},
-    ".NETFramework,Version=v4.5.1": {},
-    ".NETFramework,Version=v4.5.2": {},
-    ".NETFramework,Version=v4.6": {},
-    ".NETFramework,Version=v4.6.1": {},
-    ".NETFramework,Version=v3.5/win7-x86": {},
-    ".NETFramework,Version=v3.5/win7-x64": {},
-    ".NETFramework,Version=v4.5/win7-x86": {},
-    ".NETFramework,Version=v4.5/win7-x64": {},
-    ".NETFramework,Version=v4.5.1/win7-x86": {},
-    ".NETFramework,Version=v4.5.1/win7-x64": {},
-    ".NETFramework,Version=v4.5.2/win7-x86": {},
-    ".NETFramework,Version=v4.5.2/win7-x64": {},
-    ".NETFramework,Version=v4.6/win7-x86": {},
-    ".NETFramework,Version=v4.6/win7-x64": {},
-    ".NETFramework,Version=v4.6.1/win7-x86": {},
-    ".NETFramework,Version=v4.6.1/win7-x64": {}
+    ".NETFramework,Version=v3.5": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.1": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.5.2": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      }
+    },
+    ".NETFramework,Version=v4.6.1": {
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "netfx-System.Xml.XmlSerializer/1.1.0": {
+      "sha512": "Ig5u8iK12D1qcr0VBtgHOz1YzWo9seXvd9iZnbyrtrfatC00m3XRkQ0vaRtSC3WHLfCA079EVnbEEOY0T5KAYQ==",
+      "type": "package",
+      "files": [
+        "content/netfx/System/Xml/XmlSerializer.cs",
+        "netfx-System.Xml.XmlSerializer.1.1.0.nupkg.sha512",
+        "netfx-System.Xml.XmlSerializer.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "": [],
+    "": [
+      "netfx-System.Xml.XmlSerializer >= 1.1.0"
+    ],
     ".NETFramework,Version=v3.5": [
-      "fx/System.Configuration >= 2.0.0",
-      "fx/System.Data >= 2.0.0",
-      "fx/System.Data.DataSetExtensions >= 3.5.0",
-      "fx/System.XML >= 2.0.0",
-      "fx/System.Xml.Linq >= 3.5.0"
+      "System.Configuration >= 2.0.0",
+      "System.Data >= 2.0.0",
+      "System.Data.DataSetExtensions >= 3.5.0",
+      "System.Xml.Linq >= 3.5.0"
     ],
     ".NETFramework,Version=v4.5": [
-      "fx/System.Configuration >= 4.0.0",
-      "fx/System.Data >= 4.0.0",
-      "fx/System.Data.DataSetExtensions >= 4.0.0",
-      "fx/System.XML >= 4.0.0",
-      "fx/System.Xml.Linq >= 4.0.0"
+      "System.Configuration >= 4.0.0",
+      "System.Data >= 4.0.0",
+      "System.Data.DataSetExtensions >= 4.0.0",
+      "System.Xml.Linq >= 4.0.0"
     ],
     ".NETFramework,Version=v4.5.1": [
-      "fx/System.Configuration >= 4.0.0",
-      "fx/System.Data >= 4.0.0",
-      "fx/System.Data.DataSetExtensions >= 4.0.0",
-      "fx/System.XML >= 4.0.0",
-      "fx/System.Xml.Linq >= 4.0.0"
+      "System.Configuration >= 4.0.0",
+      "System.Data >= 4.0.0",
+      "System.Data.DataSetExtensions >= 4.0.0",
+      "System.Xml.Linq >= 4.0.0"
     ],
     ".NETFramework,Version=v4.5.2": [
-      "fx/System.Configuration >= 4.0.0",
-      "fx/System.Data >= 4.0.0",
-      "fx/System.Data.DataSetExtensions >= 4.0.0",
-      "fx/System.XML >= 4.0.0",
-      "fx/System.Xml.Linq >= 4.0.0"
+      "System.Configuration >= 4.0.0",
+      "System.Data >= 4.0.0",
+      "System.Data.DataSetExtensions >= 4.0.0",
+      "System.Xml.Linq >= 4.0.0"
     ],
     ".NETFramework,Version=v4.6": [
-      "fx/System.Configuration >= 4.0.0",
-      "fx/System.Data >= 4.0.0",
-      "fx/System.Data.DataSetExtensions >= 4.0.0",
-      "fx/System.Xml >= 4.0.0",
-      "fx/System.Xml.Linq >= 4.0.0"
+      "System.Configuration >= 4.0.0",
+      "System.Data >= 4.0.0",
+      "System.Data.DataSetExtensions >= 4.0.0",
+      "System.Xml >= 4.0.0",
+      "System.Xml.Linq >= 4.0.0"
     ],
     ".NETFramework,Version=v4.6.1": [
-      "fx/System.Configuration >= 4.0.0",
-      "fx/System.Data >= 4.0.0",
-      "fx/System.Data.DataSetExtensions >= 4.0.0",
-      "fx/System.Xml >= 4.0.0",
-      "fx/System.Xml.Linq >= 4.0.0"
+      "System.Configuration >= 4.0.0",
+      "System.Data >= 4.0.0",
+      "System.Data.DataSetExtensions >= 4.0.0",
+      "System.Xml >= 4.0.0",
+      "System.Xml.Linq >= 4.0.0"
     ]
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }

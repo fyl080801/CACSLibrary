@@ -21,10 +21,8 @@ namespace CACSLibrary.Silverlight.Maps
     {
         internal const double MAXZOOM = 20.0;
         internal const double MINZOOM = 0.0;
-        internal const double MaxLat = 85.05113;
-        internal const double MinLat = -85.05113;
-        internal const double MaxLong = 180.0;
-        internal const double MinLong = -180.0;
+        internal const double LAT = 180.0;//85.05113;
+        internal const double LONG = 180.0;
         private const double panSpeed = 5.0;
         internal const string LayersElementName = "Layers";
         internal const string ToolsElementName = "Tools";
@@ -41,6 +39,8 @@ namespace CACSLibrary.Silverlight.Maps
         internal bool _isLoaded;
         internal Panel _elementLayers;
         internal ToolsLayer _elementTools;
+        public static readonly DependencyProperty LatProperty = DependencyProperty.Register("Lat", typeof(double), typeof(CACSMaps), new PropertyMetadata(CACSMaps.LAT));
+        public static readonly DependencyProperty LongProperty = DependencyProperty.Register("Long", typeof(double), typeof(CACSMaps), new PropertyMetadata(CACSMaps.LONG));
         public static readonly DependencyProperty MaxZoomProperty = DependencyProperty.Register("MaxZoom", typeof(double), typeof(CACSMaps), new PropertyMetadata(CACSMaps.MAXZOOM));
         public static readonly DependencyProperty MinZoomProperty = DependencyProperty.Register("MinZoom", typeof(double), typeof(CACSMaps), new PropertyMetadata(CACSMaps.MINZOOM));
         public static readonly DependencyProperty CenterProperty = DependencyProperty.Register("Center", typeof(Point), typeof(CACSMaps), new PropertyMetadata(new PropertyChangedCallback(CACSMaps.OnCenterPropertyChanged)));
@@ -64,6 +64,10 @@ namespace CACSLibrary.Silverlight.Maps
         public event EventHandler<PropertyChangedEventArgs<Point>> TargetCenterChanged;
         public event EventHandler<PropertyChangedEventArgs<bool>> IsMouseOverChanged;
 
+        //public double ElementWidth { get; set; }
+
+        //public double ElementHeight { get; set; }
+
         public double MaxZoom
         {
             get { return (double)base.GetValue(CACSMaps.MaxZoomProperty); }
@@ -79,6 +83,18 @@ namespace CACSLibrary.Silverlight.Maps
         public Collection<IMapLayer> Layers
         {
             get { return this._layers; }
+        }
+
+        public double Lat
+        {
+            get { return (double)base.GetValue(CACSMaps.LatProperty); }
+            set { base.SetValue(CACSMaps.LatProperty, value); }
+        }
+
+        public double Long
+        {
+            get { return (double)base.GetValue(CACSMaps.LongProperty); }
+            set { base.SetValue(CACSMaps.LongProperty, value); }
         }
 
         public double ViewportWidth
@@ -279,9 +295,12 @@ namespace CACSLibrary.Silverlight.Maps
 
         private void OnTargetCenterChanged(Point oldValue)
         {
-            this.TargetCenter = new Point(
-                Math.Min(MaxLong, Math.Max(MinLong, this.TargetCenter.X)),
-                Math.Min(MaxLat, Math.Max(MinLat, this.TargetCenter.Y)));
+            var zoomedLong = this.Long != 0 ? this.Long * this.Zoom : double.MaxValue;
+            var zoomedLat = this.Lat != 0 ? this.Lat * this.Zoom : double.MaxValue;
+            this.TargetCenter = //this.ClaimCenter(this.TargetCenter);
+            new Point(
+                Math.Min(zoomedLong, Math.Max(-zoomedLong, this.TargetCenter.X)),
+                Math.Min(zoomedLat, Math.Max(-zoomedLat, this.TargetCenter.Y)));
             this._centering = true;
             this.BeginMoving();
         }
@@ -298,9 +317,12 @@ namespace CACSLibrary.Silverlight.Maps
 
         private void OnCenterChanged(Point oldValue)
         {
-            this.Center = new Point(
-                Math.Min(MaxLong, Math.Max(MinLong, this.Center.X)),
-                Math.Min(MaxLat, Math.Max(MinLat, this.Center.Y)));
+            var zoomedLong = this.Long != 0 ? this.Long * this.Zoom : double.MaxValue;
+            var zoomedLat = this.Lat != 0 ? this.Lat * this.Zoom : double.MaxValue;
+            this.Center = //this.ClaimCenter(this.Center);
+            new Point(
+                Math.Min(zoomedLong, Math.Max(-zoomedLong, this.Center.X)),
+                Math.Min(zoomedLat, Math.Max(-zoomedLat, this.Center.Y)));
             if (!this._centering)
             {
                 this.TargetCenter = this.Center;
@@ -469,8 +491,8 @@ namespace CACSLibrary.Silverlight.Maps
                     this.TargetCenter = this.Projection.Unproject(point);
                     break;
                 case Key.Home:
-                    point.X = point.X - this.ViewportWidth;
-                    this.TargetCenter = this.Projection.Unproject(point);
+                    //point.X = point.X - this.ViewportWidth;
+                    this.TargetCenter = this.Projection.Unproject(new Point(0.5, 0.5));
                     break;
                 case Key.Left:
                     this._panLeft = true;
@@ -576,6 +598,51 @@ namespace CACSLibrary.Silverlight.Maps
                 CompositionTarget.Rendering -= new EventHandler(this.OnMoveTimer);
             }
         }
+
+        //private Point ClaimCenter(Point center)
+        //{
+        //    center = this.Projection.Project(center);
+        //    var elementAspectRatio = this.ElementWidth / this.ElementHeight;
+        //    var logicalBounds = new Rect(0, 0, 1, 1 / elementAspectRatio);
+        //    var viewportOrigin = new Point(center.X - 0.5 * this.ViewportWidth, center.Y - 0.5 * this.ViewportHeight);
+
+        //    var pixelScale = this.ElementWidth / this.ViewportWidth;
+
+        //    var left = (logicalBounds.Left - viewportOrigin.X) * pixelScale;
+        //    var right = (logicalBounds.Right - viewportOrigin.X) * pixelScale;
+        //    if (right - left < this.ElementWidth)
+        //    {
+        //        center.X = logicalBounds.Left + 0.5 * logicalBounds.Width;
+        //    }
+        //    else if (left > 0)
+        //    {
+        //        viewportOrigin.X = logicalBounds.Left;
+        //        center.X = viewportOrigin.X + 0.5 * this.ViewportWidth;
+        //    }
+        //    else if (right < this.ElementWidth)
+        //    {
+        //        viewportOrigin.X = logicalBounds.Right - this.ElementWidth / pixelScale;
+        //        center.X = viewportOrigin.X + 0.5 * this.ViewportWidth;
+        //    }
+
+        //    var top = (logicalBounds.Top - viewportOrigin.Y) * pixelScale;
+        //    var bottom = (logicalBounds.Bottom - viewportOrigin.Y) * pixelScale;
+        //    if (bottom - top < this.ElementHeight)
+        //    {
+        //        center.Y = logicalBounds.Top + 0.5 * logicalBounds.Height;
+        //    }
+        //    else if (top > 0)
+        //    {
+        //        viewportOrigin.Y = logicalBounds.Top;
+        //        center.Y = viewportOrigin.Y + 0.5 * this.ViewportWidth / elementAspectRatio;
+        //    }
+        //    else if (bottom < this.ElementHeight)
+        //    {
+        //        viewportOrigin.Y = logicalBounds.Bottom - this.ElementHeight / pixelScale;
+        //        center.Y = viewportOrigin.Y + 0.5 * this.ViewportWidth / elementAspectRatio;
+        //    }
+        //    return this.Projection.Unproject(center);
+        //}
 
         protected void ChangeVisualStateCommon(bool useTransitions)
         {

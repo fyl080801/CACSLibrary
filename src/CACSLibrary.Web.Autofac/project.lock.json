@@ -25,25 +25,6 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
       "Microsoft.AspNet.Mvc/5.1.0": {
         "type": "package",
         "dependencies": {
@@ -75,14 +56,14 @@
         "compile": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         },
         "runtime": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -92,6 +73,45 @@
         },
         "runtime": {
           "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "net45/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net45/CACSLibrary.dll": {}
+        }
+      },
+      "CACSLibrary.Autofac/2.0.4": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Autofac": "3.5.2",
+          "CACSLibrary": "1.4.22"
+        },
+        "compile": {
+          "net45/CACSLibrary.Autofac.dll": {}
+        },
+        "runtime": {
+          "net45/CACSLibrary.Autofac.dll": {}
         }
       }
     },
@@ -118,25 +138,6 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
       "Microsoft.AspNet.Mvc/5.1.0": {
         "type": "package",
         "dependencies": {
@@ -168,14 +169,14 @@
         "compile": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         },
         "runtime": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -185,6 +186,45 @@
         },
         "runtime": {
           "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "net451/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net451/CACSLibrary.dll": {}
+        }
+      },
+      "CACSLibrary.Autofac/2.0.4": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "Autofac": "3.5.2",
+          "CACSLibrary": "1.4.22"
+        },
+        "compile": {
+          "net451/CACSLibrary.Autofac.dll": {}
+        },
+        "runtime": {
+          "net451/CACSLibrary.Autofac.dll": {}
         }
       }
     },
@@ -211,25 +251,6 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
       "Microsoft.AspNet.Mvc/5.1.0": {
         "type": "package",
         "dependencies": {
@@ -261,14 +282,14 @@
         "compile": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         },
         "runtime": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -278,6 +299,45 @@
         },
         "runtime": {
           "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "net452/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net452/CACSLibrary.dll": {}
+        }
+      },
+      "CACSLibrary.Autofac/2.0.4": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "Autofac": "3.5.2",
+          "CACSLibrary": "1.4.22"
+        },
+        "compile": {
+          "net452/CACSLibrary.Autofac.dll": {}
+        },
+        "runtime": {
+          "net452/CACSLibrary.Autofac.dll": {}
         }
       }
     },
@@ -304,25 +364,6 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
       "Microsoft.AspNet.Mvc/5.1.0": {
         "type": "package",
         "dependencies": {
@@ -354,14 +395,14 @@
         "compile": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         },
         "runtime": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -371,6 +412,46 @@
         },
         "runtime": {
           "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "net46/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net46/CACSLibrary.dll": {}
+        }
+      },
+      "CACSLibrary.Autofac/2.0.4": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "Autofac": "3.5.2",
+          "CACSLibrary": "1.4.22"
+        },
+        "compile": {
+          "net46/CACSLibrary.Autofac.dll": {}
+        },
+        "runtime": {
+          "net46/CACSLibrary.Autofac.dll": {}
         }
       }
     },
@@ -397,1019 +478,102 @@
           "lib/net45/Autofac.Integration.Mvc.dll": {}
         }
       },
-      "CACSLibrary/1.4.19": {
+      "Microsoft.AspNet.Mvc/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
+          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "netfx-System.Xml.XmlSerializer/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
+      "CACSLibrary/1.4.22": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "netfx-System.Xml.XmlSerializer": "1.1.0"
+        },
         "frameworkAssemblies": [
           "System.Configuration",
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml",
           "System.Xml.Linq"
-        ]
+        ],
+        "compile": {
+          "net461/CACSLibrary.dll": {}
+        },
+        "runtime": {
+          "net461/CACSLibrary.dll": {}
+        }
       },
-      "CACSLibrary.Autofac/2.0.2": {
+      "CACSLibrary.Autofac/2.0.4": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
+          "CACSLibrary": "1.4.22"
         },
         "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
+          "net461/CACSLibrary.Autofac.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.5/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.5/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.5.1/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.5.1/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.5.2/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.5.2/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.XML",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6.1/win7-x86": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6.1/win7-x64": {
-      "Autofac/3.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Autofac.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Autofac.dll": {}
-        }
-      },
-      "Autofac.Mvc5/3.3.4": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "[3.4.0, 4.0.0)",
-          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Autofac.Integration.Mvc.dll": {}
-        }
-      },
-      "CACSLibrary/1.4.19": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml",
-          "System.Xml.Linq"
-        ]
-      },
-      "CACSLibrary.Autofac/2.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Autofac": "3.5.2",
-          "CACSLibrary": "1.4.18"
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.AspNet.WebPages": "[3.1.0, 3.2.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.1.0, 3.2.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+          "net461/CACSLibrary.Autofac.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "CACSLibrary/1.4.19": {
-      "type": "project",
-      "path": "../CACSLibrary/project.json"
-    },
-    "CACSLibrary.Autofac/2.0.2": {
-      "type": "project",
-      "path": "../CACSLibrary.Autofac/project.json"
-    },
     "Autofac/3.5.2": {
-      "type": "package",
       "sha512": "pGR5LjY8T/16x6SkJNd7u6EjQnE4C7JS0BZJ7Yl7pt313gIUZ/2ZnPSOIM5eaIA7ArxaudlyyLvAT4ayX5UJ/A==",
+      "type": "package",
       "files": [
         "Autofac.3.5.2.nupkg",
         "Autofac.3.5.2.nupkg.sha512",
@@ -1421,8 +585,8 @@
       ]
     },
     "Autofac.Mvc5/3.3.4": {
-      "type": "package",
       "sha512": "GHLGXoanlAmGa4smVA08T30Pm4zBA2/OOipWZ6O8T1HmZiGJTmgoQ5ormQi4am6JrjvEYtOkGOBdpbkAlDByhg==",
+      "type": "package",
       "files": [
         "Autofac.Mvc5.3.3.4.nupkg",
         "Autofac.Mvc5.3.3.4.nupkg.sha512",
@@ -1432,82 +596,100 @@
       ]
     },
     "Microsoft.AspNet.Mvc/5.1.0": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "b0+kjZw+CG0YFpsi/DvoDmIaT4rKaxCUJW+bgAc6hI1GqPIqI4C8+zvNYWi7/ufm6GGqk1OlkBDkGlTpbTIDpA==",
+      "type": "package",
       "files": [
         "Content/Web.config.install.xdt",
         "Content/Web.config.uninstall.xdt",
-        "lib/net45/System.Web.Mvc.dll",
-        "lib/net45/System.Web.Mvc.xml",
         "Microsoft.AspNet.Mvc.5.1.0.nupkg",
         "Microsoft.AspNet.Mvc.5.1.0.nupkg.sha512",
-        "Microsoft.AspNet.Mvc.nuspec"
+        "Microsoft.AspNet.Mvc.nuspec",
+        "lib/net45/System.Web.Mvc.dll",
+        "lib/net45/System.Web.Mvc.xml"
       ]
     },
     "Microsoft.AspNet.Razor/3.1.0": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "qqNngbKkZv9TgetKRZzt7fIkgW4x9/eF8XNxGnR+dIQiaE+1MzsLDLjKbu8VrabhTCAZl8vV/Rh65EjE3zSZ2w==",
+      "type": "package",
       "files": [
-        "lib/net45/System.Web.Razor.dll",
-        "lib/net45/System.Web.Razor.xml",
         "Microsoft.AspNet.Razor.3.1.0.nupkg",
         "Microsoft.AspNet.Razor.3.1.0.nupkg.sha512",
-        "Microsoft.AspNet.Razor.nuspec"
+        "Microsoft.AspNet.Razor.nuspec",
+        "lib/net45/System.Web.Razor.dll",
+        "lib/net45/System.Web.Razor.xml"
       ]
     },
     "Microsoft.AspNet.WebPages/3.1.0": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "mWVFqkrwEjDB3yuVU9aSpdGgU/Gz1zD1YYFd6yezCTVFL5IjxHtryMBOuQ0yXAIcgi2ZaF5SRXdD7eFhDTbhlQ==",
+      "type": "package",
       "files": [
         "Content/Web.config.install.xdt",
         "Content/Web.config.uninstall.xdt",
+        "Microsoft.AspNet.WebPages.3.1.0.nupkg",
+        "Microsoft.AspNet.WebPages.3.1.0.nupkg.sha512",
+        "Microsoft.AspNet.WebPages.nuspec",
         "lib/net45/System.Web.Helpers.dll",
         "lib/net45/System.Web.Helpers.xml",
         "lib/net45/System.Web.WebPages.Deployment.dll",
         "lib/net45/System.Web.WebPages.Deployment.xml",
-        "lib/net45/System.Web.WebPages.dll",
         "lib/net45/System.Web.WebPages.Razor.dll",
         "lib/net45/System.Web.WebPages.Razor.xml",
-        "lib/net45/System.Web.WebPages.xml",
-        "Microsoft.AspNet.WebPages.3.1.0.nupkg",
-        "Microsoft.AspNet.WebPages.3.1.0.nupkg.sha512",
-        "Microsoft.AspNet.WebPages.nuspec"
+        "lib/net45/System.Web.WebPages.dll",
+        "lib/net45/System.Web.WebPages.xml"
       ]
     },
     "Microsoft.Web.Infrastructure/1.0.0": {
-      "type": "package",
       "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "type": "package",
       "files": [
-        "lib/net40/Microsoft.Web.Infrastructure.dll",
         "Microsoft.Web.Infrastructure.1.0.0.nupkg",
         "Microsoft.Web.Infrastructure.1.0.0.nupkg.sha512",
-        "Microsoft.Web.Infrastructure.nuspec"
+        "Microsoft.Web.Infrastructure.nuspec",
+        "lib/net40/Microsoft.Web.Infrastructure.dll"
       ]
+    },
+    "netfx-System.Xml.XmlSerializer/1.1.0": {
+      "sha512": "Ig5u8iK12D1qcr0VBtgHOz1YzWo9seXvd9iZnbyrtrfatC00m3XRkQ0vaRtSC3WHLfCA079EVnbEEOY0T5KAYQ==",
+      "type": "package",
+      "files": [
+        "content/netfx/System/Xml/XmlSerializer.cs",
+        "netfx-System.Xml.XmlSerializer.1.1.0.nupkg.sha512",
+        "netfx-System.Xml.XmlSerializer.nuspec"
+      ]
+    },
+    "CACSLibrary/1.4.22": {
+      "type": "project",
+      "path": "../CACSLibrary/project.json",
+      "msbuildProject": "../CACSLibrary/CACSLibrary.xproj"
+    },
+    "CACSLibrary.Autofac/2.0.4": {
+      "type": "project",
+      "path": "../CACSLibrary.Autofac/project.json",
+      "msbuildProject": "../CACSLibrary.Autofac/CACSLibrary.Autofac.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "Autofac.Mvc5 >= 3.3.4",
-      "CACSLibrary >= 1.4.17-*",
-      "CACSLibrary.Autofac >= 2.0.2-*"
+      "CACSLibrary >= 1.4.21-*",
+      "CACSLibrary.Autofac >= 2.0.3-*"
     ],
     ".NETFramework,Version=v4.5": [
-      "fx/System.Web >= 4.0.0"
+      "System.Web >= 4.0.0"
     ],
     ".NETFramework,Version=v4.5.1": [
-      "fx/System.Web >= 4.0.0"
+      "System.Web >= 4.0.0"
     ],
     ".NETFramework,Version=v4.5.2": [
-      "fx/System.Web >= 4.0.0"
+      "System.Web >= 4.0.0"
     ],
     ".NETFramework,Version=v4.6": [
-      "fx/System.Web >= 4.0.0"
+      "System.Web >= 4.0.0"
     ],
     ".NETFramework,Version=v4.6.1": [
-      "fx/System.Web >= 4.0.0"
+      "System.Web >= 4.0.0"
     ]
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }

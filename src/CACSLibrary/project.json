@@ -1,18 +1,19 @@
 {
-  "version": "1.4.20-*",
+  "title": "CACSLibrary",
+  "version": "1.4.22-*",
   "description": "CACSLibrary toolkit",
   "authors": [ "fyl08" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-
+  "packOptions": {
+    "tags": [ "cacs" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
   "frameworks": {
     "net35": {
       "frameworkAssemblies": {
         "System.Configuration": "2.0.0.0",
         "System.Data": "2.0.0.0",
         "System.Data.DataSetExtensions": "3.5.0.0",
-        "System.XML": "2.0.0.0",
         "System.Xml.Linq": "3.5.0.0"
       }
     },
@@ -21,7 +22,6 @@
         "System.Configuration": "4.0.0.0",
         "System.Data": "4.0.0.0",
         "System.Data.DataSetExtensions": "4.0.0.0",
-        "System.XML": "4.0.0.0",
         "System.Xml.Linq": "4.0.0.0"
       }
     },
@@ -30,7 +30,6 @@
         "System.Configuration": "4.0.0.0",
         "System.Data": "4.0.0.0",
         "System.Data.DataSetExtensions": "4.0.0.0",
-        "System.XML": "4.0.0.0",
         "System.Xml.Linq": "4.0.0.0"
       }
     },
@@ -39,7 +38,6 @@
         "System.Configuration": "4.0.0.0",
         "System.Data": "4.0.0.0",
         "System.Data.DataSetExtensions": "4.0.0.0",
-        "System.XML": "4.0.0.0",
         "System.Xml.Linq": "4.0.0.0"
       }
     },
@@ -61,5 +59,8 @@
         "System.Xml.Linq": "4.0.0.0"
       }
     }
+  },
+  "dependencies": {
+    "netfx-System.Xml.XmlSerializer": "1.1.0"
   }
 }
