@@ -1,3 +1,4 @@
+using CACSLibrary.Component;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -5,6 +6,7 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Threading;
 
 namespace CACSLibrary.Data
 {
@@ -13,6 +15,25 @@ namespace CACSLibrary.Data
     /// </summary>
     public class CACSObjectContext : DbContext, IDbContext
     {
+        static readonly ReaderWriterLockSlim LOCKER = new ReaderWriterLockSlim();
+        ITransaction _transaction;
+
+        public ITransaction Transaction
+        {
+            get
+            {
+                if (_transaction == null)
+                {
+                    using (new WriteLocker(LOCKER))
+                    {
+                        if (_transaction == null)
+                            _transaction = new EfTransaction(this.Database, this);
+                    }
+                }
+                return _transaction;
+            }
+        }
+
         /// <summary>
         /// ¹¹Ôìº¯Êý
         /// </summary>

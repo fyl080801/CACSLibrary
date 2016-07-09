@@ -16,7 +16,7 @@ namespace CACSLibrary.Autofac
 
         public ContainerManager()
         {
-            this._container = this._builder.Build(ContainerBuildOptions.None);
+            _container = _builder.Build(ContainerBuildOptions.None);
         }
 
         public bool IsRegistered(Type serviceType)

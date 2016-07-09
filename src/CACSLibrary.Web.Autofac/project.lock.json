@@ -100,7 +100,7 @@
           "net45/CACSLibrary.dll": {}
         }
       },
-      "CACSLibrary.Autofac/2.0.4": {
+      "CACSLibrary.Autofac/2.0.5": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
@@ -213,7 +213,7 @@
           "net451/CACSLibrary.dll": {}
         }
       },
-      "CACSLibrary.Autofac/2.0.4": {
+      "CACSLibrary.Autofac/2.0.5": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
@@ -326,7 +326,7 @@
           "net452/CACSLibrary.dll": {}
         }
       },
-      "CACSLibrary.Autofac/2.0.4": {
+      "CACSLibrary.Autofac/2.0.5": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
@@ -440,7 +440,7 @@
           "net46/CACSLibrary.dll": {}
         }
       },
-      "CACSLibrary.Autofac/2.0.4": {
+      "CACSLibrary.Autofac/2.0.5": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
@@ -554,7 +554,7 @@
           "net461/CACSLibrary.dll": {}
         }
       },
-      "CACSLibrary.Autofac/2.0.4": {
+      "CACSLibrary.Autofac/2.0.5": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -662,7 +662,7 @@
       "path": "../CACSLibrary/project.json",
       "msbuildProject": "../CACSLibrary/CACSLibrary.xproj"
     },
-    "CACSLibrary.Autofac/2.0.4": {
+    "CACSLibrary.Autofac/2.0.5": {
       "type": "project",
       "path": "../CACSLibrary.Autofac/project.json",
       "msbuildProject": "../CACSLibrary.Autofac/CACSLibrary.Autofac.xproj"

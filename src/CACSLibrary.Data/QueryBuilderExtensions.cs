@@ -79,10 +79,10 @@ namespace CACSLibrary.Data
                 ConstantExpression constantTo = Expression.Constant(to);
                 ConstantExpression constantZero = Expression.Constant(0);
                 MethodInfo compareMethod = typeof(string).GetMethod("Compare", new Type[]
-				{
-					typeof(string),
-					typeof(string)
-				});
+                {
+                    typeof(string),
+                    typeof(string)
+                });
                 MethodCallExpression methodExp = Expression.Call(null, compareMethod, propertyBody, constantFrom);
                 BinaryExpression c = Expression.GreaterThanOrEqual(methodExp, constantZero);
                 MethodCallExpression methodExp2 = Expression.Call(null, compareMethod, propertyBody, constantTo);
@@ -291,12 +291,12 @@ namespace CACSLibrary.Data
                 value = value.Trim();
                 Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, string>(q, property);
                 MethodCallExpression methodExpr = Expression.Call(propertyBody, typeof(string).GetMethod("Contains", new Type[]
-				{
-					typeof(string)
-				}), new Expression[]
-				{
-					Expression.Constant(value)
-				});
+                {
+                    typeof(string)
+                }), new Expression[]
+                {
+                    Expression.Constant(value)
+                });
                 q.AppendExpression(methodExpr);
                 result = q;
             }
@@ -410,9 +410,9 @@ namespace CACSLibrary.Data
                 {
                 }
                 MethodInfo method = QueryBuilderExtensions.method_Contains.MakeGenericMethod(new Type[]
-				{
-					type
-				});
+                {
+                    type
+                });
                 Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(q, property);
                 MethodCallExpression methodExpr = Expression.Call(null, method, Expression.Constant(values), propertyBody);
                 q.AppendExpression(methodExpr);
@@ -470,9 +470,9 @@ namespace CACSLibrary.Data
         {
             ParameterExpression paramExpr = Expression.Parameter(typeof(T));
             string[] subproperties = property.Split(new char[]
-			{
-				'.'
-			});
+            {
+                '.'
+            });
             Type propertyType = typeof(T);
             Expression propertyExpr = paramExpr;
             string[] array = subproperties;
@@ -484,9 +484,9 @@ namespace CACSLibrary.Data
                 propertyType = propertyInfo.PropertyType;
             }
             return Expression.Lambda<Func<T, P>>(propertyExpr, new ParameterExpression[]
-			{
-				paramExpr
-			});
+            {
+                paramExpr
+            });
         }
     }
 }

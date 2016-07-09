@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 
 namespace CACSLibrary.Data
@@ -54,5 +55,10 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <returns></returns>
         string CreateDatabaseScript();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        ITransaction Transaction { get; }
     }
 }

@@ -13,7 +13,7 @@ namespace CACSLibrary.Data
     /// <typeparam name="T">数据对象类型</typeparam>
     public class EfRepository<T> : IRepository<T> where T : BaseObjectEntity
     {
-        static readonly ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
+        static readonly ReaderWriterLockSlim LOCKER = new ReaderWriterLockSlim();
         readonly IDbContext _context;
         IDbSet<T> _entities;
 
@@ -34,7 +34,7 @@ namespace CACSLibrary.Data
             get
             {
                 IQueryable<T> entities;
-                using (new WriteLocker(EfRepository<T>._locker))
+                using (new WriteLocker(LOCKER))
                 {
                     entities = this.Entities;
                 }
@@ -75,9 +75,12 @@ namespace CACSLibrary.Data
                 if (entity == null)
                     throw new ArgumentNullException("entity");
                 this.Entities.Add(entity);
-                using (new WriteLocker(EfRepository<T>._locker))
+                if (!_context.Transaction.IsBegined)
                 {
-                    this._context.SaveChanges();
+                    using (new WriteLocker(LOCKER))
+                    {
+                        this._context.SaveChanges();
+                    }
                 }
             }
             catch (DbEntityValidationException dbEx)
@@ -90,8 +93,7 @@ namespace CACSLibrary.Data
                         msg = msg + string.Format("属性: {0} 错误: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
                     }
                 }
-                Exception fail = new Exception(msg, dbEx);
-                throw fail;
+                throw new CACSException(msg, dbEx);
             }
         }
 
@@ -105,7 +107,10 @@ namespace CACSLibrary.Data
             {
                 if (entity == null)
                     throw new ArgumentNullException("entity");
-                this._context.SaveChanges();
+                if (!_context.Transaction.IsBegined)
+                {
+                    this._context.SaveChanges();
+                }
             }
             catch (DbEntityValidationException dbEx)
             {
@@ -117,8 +122,7 @@ namespace CACSLibrary.Data
                         msg = msg + Environment.NewLine + string.Format("属性: {0} 错误: {1}", validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
-                Exception fail = new Exception(msg, dbEx);
-                throw fail;
+                throw new CACSException(msg, dbEx);
             }
         }
 
@@ -133,7 +137,10 @@ namespace CACSLibrary.Data
                 if (entity == null)
                     throw new ArgumentNullException("entity");
                 this.Entities.Remove(entity);
-                this._context.SaveChanges();
+                if (!_context.Transaction.IsBegined)
+                {
+                    this._context.SaveChanges();
+                }
             }
             catch (DbEntityValidationException dbEx)
             {
@@ -145,8 +152,7 @@ namespace CACSLibrary.Data
                         msg = msg + Environment.NewLine + string.Format("属性: {0} 错误: {1}", validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
-                Exception fail = new Exception(msg, dbEx);
-                throw fail;
+                throw new CACSException(msg, dbEx);
             }
         }
 
@@ -165,7 +171,10 @@ namespace CACSLibrary.Data
                     T entity = entities[i];
                     this.Entities.Add(entity);
                 }
-                this._context.SaveChanges();
+                if (!_context.Transaction.IsBegined)
+                {
+                    this._context.SaveChanges();
+                }
             }
             catch (DbEntityValidationException dbEx)
             {
@@ -177,8 +186,7 @@ namespace CACSLibrary.Data
                         msg = msg + string.Format("属性: {0} 错误: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
                     }
                 }
-                Exception fail = new Exception(msg, dbEx);
-                throw fail;
+                throw new CACSException(msg, dbEx);
             }
         }
 
@@ -210,7 +218,10 @@ namespace CACSLibrary.Data
                     T entity = entities[i];
                     this.Entities.Remove(entity);
                 }
-                this._context.SaveChanges();
+                if (!_context.Transaction.IsBegined)
+                {
+                    this._context.SaveChanges();
+                }
             }
             catch (DbEntityValidationException dbEx)
             {
@@ -222,8 +233,7 @@ namespace CACSLibrary.Data
                         msg = msg + Environment.NewLine + string.Format("属性: {0} 错误: {1}", validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
-                Exception fail = new Exception(msg, dbEx);
-                throw fail;
+                throw new CACSException(msg, dbEx);
             }
         }
     }
