@@ -20,28 +20,28 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="from"></param>
         /// <param name="to"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Between<T, P>(this IQueryBuilder<T> q, Expression<Func<T, P>> property, P from, P to)
+        public static IQueryBuilder<T> Between<T, P>(this IQueryBuilder<T> query, Expression<Func<T, P>> property, P from, P to)
         {
             Type type = typeof(P);
             ConstantExpression constantFrom = Expression.Constant(from);
             ConstantExpression constantTo = Expression.Constant(to);
-            Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(q, property);
+            Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(query, property);
             Expression nonNullProperty = propertyBody;
             if (type.IsNullableType())
             {
                 type = type.GetNonNullableType();
                 nonNullProperty = Expression.Convert(propertyBody, type);
             }
-            BinaryExpression c = Expression.GreaterThanOrEqual(nonNullProperty, constantFrom);
-            BinaryExpression c2 = Expression.LessThanOrEqual(nonNullProperty, constantTo);
-            BinaryExpression c3 = Expression.AndAlso(c, c2);
-            q.AppendExpression(c3);
-            return q;
+            BinaryExpression up = Expression.GreaterThanOrEqual(nonNullProperty, constantFrom);
+            BinaryExpression down = Expression.LessThanOrEqual(nonNullProperty, constantTo);
+            BinaryExpression between = Expression.AndAlso(up, down);
+            query.AppendExpression(between);
+            return query;
         }
 
         /// <summary>
@@ -49,32 +49,32 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="from"></param>
         /// <param name="to"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Between<T, P>(this IQueryBuilder<T> q, string property, P from, P to)
+        public static IQueryBuilder<T> Between<T, P>(this IQueryBuilder<T> query, string property, P from, P to)
         {
-            return q.Between(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), from, to);
+            return query.Between(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), from, to);
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="from"></param>
         /// <param name="to"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Between<T>(this IQueryBuilder<T> q, Expression<Func<T, string>> property, string from, string to)
+        public static IQueryBuilder<T> Between<T>(this IQueryBuilder<T> query, Expression<Func<T, string>> property, string from, string to)
         {
             from = from.Trim();
             to = to.Trim();
             if (from != string.Empty && to != string.Empty)
             {
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, string>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, string>(query, property);
                 ConstantExpression constantFrom = Expression.Constant(from);
                 ConstantExpression constantTo = Expression.Constant(to);
                 ConstantExpression constantZero = Expression.Constant(0);
@@ -84,27 +84,27 @@ namespace CACSLibrary.Data
                     typeof(string)
                 });
                 MethodCallExpression methodExp = Expression.Call(null, compareMethod, propertyBody, constantFrom);
-                BinaryExpression c = Expression.GreaterThanOrEqual(methodExp, constantZero);
+                BinaryExpression up = Expression.GreaterThanOrEqual(methodExp, constantZero);
                 MethodCallExpression methodExp2 = Expression.Call(null, compareMethod, propertyBody, constantTo);
-                BinaryExpression c2 = Expression.LessThanOrEqual(methodExp2, constantZero);
-                BinaryExpression c3 = Expression.AndAlso(c, c2);
-                q.AppendExpression(c3);
+                BinaryExpression down = Expression.LessThanOrEqual(methodExp2, constantZero);
+                BinaryExpression between = Expression.AndAlso(up, down);
+                query.AppendExpression(between);
             }
-            return q;
+            return query;
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="from"></param>
         /// <param name="to"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Between<T>(this IQueryBuilder<T> q, string property, string from, string to)
+        public static IQueryBuilder<T> Between<T>(this IQueryBuilder<T> query, string property, string from, string to)
         {
-            return q.Between(QueryBuilderExtensions.BuildMemberLambda<T, string>(property), from, to);
+            return query.Between(QueryBuilderExtensions.BuildMemberLambda<T, string>(property), from, to);
         }
 
         /// <summary>
@@ -112,24 +112,24 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> LessThan<T, V>(this IQueryBuilder<T> q, Expression<Func<T, V>> property, V value)
+        public static IQueryBuilder<T> LessThan<T, V>(this IQueryBuilder<T> query, Expression<Func<T, V>> property, V value)
         {
             IQueryBuilder<T> result;
             if (value == null)
             {
-                result = q;
+                result = query;
             }
             else
             {
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(query, property);
                 Expression valueExpr = Expression.Constant(value);
                 Expression methodExpr = Expression.LessThan(propertyBody, valueExpr);
-                q.AppendExpression(methodExpr);
-                result = q;
+                query.AppendExpression(methodExpr);
+                result = query;
             }
             return result;
         }
@@ -139,13 +139,13 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> LessThan<T, V>(this IQueryBuilder<T> q, string property, V value)
+        public static IQueryBuilder<T> LessThan<T, V>(this IQueryBuilder<T> query, string property, V value)
         {
-            return q.LessThan(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
+            return query.LessThan(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
         }
 
         /// <summary>
@@ -153,24 +153,24 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> GreaterThan<T, V>(this IQueryBuilder<T> q, Expression<Func<T, V>> property, V value)
+        public static IQueryBuilder<T> GreaterThan<T, V>(this IQueryBuilder<T> query, Expression<Func<T, V>> property, V value)
         {
             IQueryBuilder<T> result;
             if (value == null)
             {
-                result = q;
+                result = query;
             }
             else
             {
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(query, property);
                 Expression valueExpr = Expression.Constant(value);
                 Expression methodExpr = Expression.GreaterThan(propertyBody, valueExpr);
-                q.AppendExpression(methodExpr);
-                result = q;
+                query.AppendExpression(methodExpr);
+                result = query;
             }
             return result;
         }
@@ -180,13 +180,13 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> GreaterThan<T, V>(this IQueryBuilder<T> q, string property, V value)
+        public static IQueryBuilder<T> GreaterThan<T, V>(this IQueryBuilder<T> query, string property, V value)
         {
-            return q.GreaterThan(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
+            return query.GreaterThan(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
         }
 
         /// <summary>
@@ -194,24 +194,24 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> LessThanOrEqual<T, V>(this IQueryBuilder<T> q, Expression<Func<T, V>> property, V value)
+        public static IQueryBuilder<T> LessThanOrEqual<T, V>(this IQueryBuilder<T> query, Expression<Func<T, V>> property, V value)
         {
             IQueryBuilder<T> result;
             if (value == null)
             {
-                result = q;
+                result = query;
             }
             else
             {
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(query, property);
                 Expression valueExpr = Expression.Constant(value);
                 Expression methodExpr = Expression.LessThanOrEqual(propertyBody, valueExpr);
-                q.AppendExpression(methodExpr);
-                result = q;
+                query.AppendExpression(methodExpr);
+                result = query;
             }
             return result;
         }
@@ -221,13 +221,13 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> LessThanOrEqual<T, V>(this IQueryBuilder<T> q, string property, V value)
+        public static IQueryBuilder<T> LessThanOrEqual<T, V>(this IQueryBuilder<T> query, string property, V value)
         {
-            return q.LessThanOrEqual(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
+            return query.LessThanOrEqual(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
         }
 
         /// <summary>
@@ -235,24 +235,24 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> GreaterThanOrEqual<T, V>(this IQueryBuilder<T> q, Expression<Func<T, V>> property, V value)
+        public static IQueryBuilder<T> GreaterThanOrEqual<T, V>(this IQueryBuilder<T> query, Expression<Func<T, V>> property, V value)
         {
             IQueryBuilder<T> result;
             if (value == null)
             {
-                result = q;
+                result = query;
             }
             else
             {
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, V>(query, property);
                 Expression valueExpr = Expression.Constant(value);
                 Expression methodExpr = Expression.GreaterThanOrEqual(propertyBody, valueExpr);
-                q.AppendExpression(methodExpr);
-                result = q;
+                query.AppendExpression(methodExpr);
+                result = query;
             }
             return result;
         }
@@ -262,34 +262,34 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="V"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> GreaterThanOrEqual<T, V>(this IQueryBuilder<T> q, string property, V value)
+        public static IQueryBuilder<T> GreaterThanOrEqual<T, V>(this IQueryBuilder<T> query, string property, V value)
         {
-            return q.GreaterThanOrEqual(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
+            return query.GreaterThanOrEqual(QueryBuilderExtensions.BuildMemberLambda<T, V>(property), value);
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Like<T>(this IQueryBuilder<T> q, Expression<Func<T, string>> property, string value)
+        public static IQueryBuilder<T> Like<T>(this IQueryBuilder<T> query, Expression<Func<T, string>> property, string value)
         {
             IQueryBuilder<T> result;
             if (string.IsNullOrEmpty(value))
             {
-                result = q;
+                result = query;
             }
             else
             {
                 value = value.Trim();
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, string>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, string>(query, property);
                 MethodCallExpression methodExpr = Expression.Call(propertyBody, typeof(string).GetMethod("Contains", new Type[]
                 {
                     typeof(string)
@@ -297,8 +297,8 @@ namespace CACSLibrary.Data
                 {
                     Expression.Constant(value)
                 });
-                q.AppendExpression(methodExpr);
-                result = q;
+                query.AppendExpression(methodExpr);
+                result = query;
             }
             return result;
         }
@@ -307,13 +307,13 @@ namespace CACSLibrary.Data
         /// 
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Like<T>(this IQueryBuilder<T> q, string property, string value)
+        public static IQueryBuilder<T> Like<T>(this IQueryBuilder<T> query, string property, string value)
         {
-            return q.Like(QueryBuilderExtensions.BuildMemberLambda<T, string>(property), value);
+            return query.Like(QueryBuilderExtensions.BuildMemberLambda<T, string>(property), value);
         }
 
         /// <summary>
@@ -321,23 +321,23 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Equal<T, P>(this IQueryBuilder<T> q, Expression<Func<T, P>> property, P value)
+        public static IQueryBuilder<T> Equal<T, P>(this IQueryBuilder<T> query, Expression<Func<T, P>> property, P value)
         {
             Expression right = Expression.Constant(value);
             Type type = typeof(P);
-            Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(q, property);
+            Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(query, property);
             Expression left = propertyBody;
             if (type.IsNullableType())
             {
                 right = Expression.Convert(right, type);
             }
             BinaryExpression methodExpr = Expression.Equal(left, right);
-            q.AppendExpression(methodExpr);
-            return q;
+            query.AppendExpression(methodExpr);
+            return query;
         }
 
         /// <summary>
@@ -345,13 +345,13 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> Equal<T, P>(this IQueryBuilder<T> q, string property, P value)
+        public static IQueryBuilder<T> Equal<T, P>(this IQueryBuilder<T> query, string property, P value)
         {
-            return q.Equal(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), value);
+            return query.Equal(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), value);
         }
 
         /// <summary>
@@ -359,23 +359,23 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> NotEqual<T, P>(this IQueryBuilder<T> q, Expression<Func<T, P>> property, P value)
+        public static IQueryBuilder<T> NotEqual<T, P>(this IQueryBuilder<T> query, Expression<Func<T, P>> property, P value)
         {
             Expression right = Expression.Constant(value);
             Type type = typeof(P);
-            Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(q, property);
+            Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(query, property);
             Expression left = propertyBody;
             if (type.IsNullableType())
             {
                 right = Expression.Convert(right, type);
             }
             BinaryExpression methodExpr = Expression.NotEqual(left, right);
-            q.AppendExpression(methodExpr);
-            return q;
+            query.AppendExpression(methodExpr);
+            return query;
         }
 
         /// <summary>
@@ -383,13 +383,13 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> NotEqual<T, P>(this IQueryBuilder<T> q, string property, P value)
+        public static IQueryBuilder<T> NotEqual<T, P>(this IQueryBuilder<T> query, string property, P value)
         {
-            return q.NotEqual(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), value);
+            return query.NotEqual(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), value);
         }
 
         /// <summary>
@@ -397,11 +397,11 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="values"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> In<T, P>(this IQueryBuilder<T> q, Expression<Func<T, P>> property, params P[] values)
+        public static IQueryBuilder<T> In<T, P>(this IQueryBuilder<T> query, Expression<Func<T, P>> property, params P[] values)
         {
             if (values != null && values.Length > 0)
             {
@@ -413,11 +413,11 @@ namespace CACSLibrary.Data
                 {
                     type
                 });
-                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(q, property);
+                Expression propertyBody = QueryBuilderExtensions.GetMemberExpression<T, P>(query, property);
                 MethodCallExpression methodExpr = Expression.Call(null, method, Expression.Constant(values), propertyBody);
-                q.AppendExpression(methodExpr);
+                query.AppendExpression(methodExpr);
             }
-            return q;
+            return query;
         }
 
         /// <summary>
@@ -425,13 +425,13 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <param name="values"></param>
         /// <returns></returns>
-        public static IQueryBuilder<T> In<T, P>(this IQueryBuilder<T> q, string property, params P[] values)
+        public static IQueryBuilder<T> In<T, P>(this IQueryBuilder<T> query, string property, params P[] values)
         {
-            return q.In(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), values);
+            return query.In(QueryBuilderExtensions.BuildMemberLambda<T, P>(property), values);
         }
 
         /// <summary>
@@ -439,20 +439,20 @@ namespace CACSLibrary.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="P"></typeparam>
-        /// <param name="q"></param>
+        /// <param name="query"></param>
         /// <param name="property"></param>
         /// <returns></returns>
-        private static Expression GetMemberExpression<T, P>(IQueryBuilder<T> q, Expression<Func<T, P>> property)
+        private static Expression GetMemberExpression<T, P>(IQueryBuilder<T> query, Expression<Func<T, P>> property)
         {
             Expression result;
-            if (q.Parameters == null || q.Parameters.Length == 0)
+            if (query.Parameters == null || query.Parameters.Length == 0)
             {
-                q.Parameters = property.GetParameters<T, P>();
+                query.Parameters = property.GetParameters<T, P>();
                 result = property.Body;
             }
             else
             {
-                ParameterExpressionVisitor visitor = new ParameterExpressionVisitor(q.Parameters[0]);
+                ParameterExpressionVisitor visitor = new ParameterExpressionVisitor(query.Parameters[0]);
                 Expression memberExpr = visitor.ChangeParameter(property.Body);
                 result = memberExpr;
             }

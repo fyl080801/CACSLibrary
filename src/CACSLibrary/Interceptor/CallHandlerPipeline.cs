@@ -83,7 +83,11 @@ namespace CACSLibrary.Interceptor
             context.Request.Args.CopyTo(array, 0);
             try
             {
-                object ret = context.Request.MethodBase.Invoke(this._target, array);
+                object ret;
+                if (context.ReturnObject == null)
+                    ret = context.Request.MethodBase.Invoke(this._target, array);
+                else
+                    ret = context.ReturnObject;
                 context.ReturnMessage(new ReturnMessage(ret, array, array.Length, context.Request.LogicalCallContext, context.Request));
             }
             catch (Exception methodex)

@@ -83,6 +83,15 @@ namespace CACSLibrary.Interceptor
             this._response = new ReturnMessage(value, this.Response.OutArgs, this.Response.OutArgCount, this.Response.LogicalCallContext, this.Request);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public object ReturnObject
+        {
+            get;
+            set;
+        }
+
         internal void ReturnMessage(ReturnMessage message)
         {
             this._response = message;
