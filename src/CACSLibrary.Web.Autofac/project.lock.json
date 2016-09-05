@@ -81,7 +81,7 @@
           "System.Xml"
         ]
       },
-      "CACSLibrary/1.4.22": {
+      "CACSLibrary/1.4.23": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
@@ -194,7 +194,7 @@
           "System.Xml"
         ]
       },
-      "CACSLibrary/1.4.22": {
+      "CACSLibrary/1.4.23": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
@@ -307,7 +307,7 @@
           "System.Xml"
         ]
       },
-      "CACSLibrary/1.4.22": {
+      "CACSLibrary/1.4.23": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
@@ -420,7 +420,7 @@
           "System.Xml"
         ]
       },
-      "CACSLibrary/1.4.22": {
+      "CACSLibrary/1.4.23": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
@@ -534,7 +534,7 @@
           "System.Xml"
         ]
       },
-      "CACSLibrary/1.4.22": {
+      "CACSLibrary/1.4.23": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -657,7 +657,7 @@
         "netfx-System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "CACSLibrary/1.4.22": {
+    "CACSLibrary/1.4.23": {
       "type": "project",
       "path": "../CACSLibrary/project.json",
       "msbuildProject": "../CACSLibrary/CACSLibrary.xproj"
