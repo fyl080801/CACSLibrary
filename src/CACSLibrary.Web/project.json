@@ -35,6 +35,6 @@
     }
   },
   "dependencies": {
-    "CACSLibrary": "1.4.19-*"
+    "CACSLibrary": "1.4.*"
   }
 }

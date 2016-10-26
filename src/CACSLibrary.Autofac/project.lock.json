@@ -277,7 +277,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "CACSLibrary >= 1.4.22-*"
+      "CACSLibrary >= 1.4.*"
     ],
     ".NETFramework,Version=v3.5": [
       "Autofac >= 2.6.3.862"

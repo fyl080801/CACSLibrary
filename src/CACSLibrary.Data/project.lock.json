@@ -255,7 +255,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "CACSLibrary >= 1.4.18-*",
+      "CACSLibrary >= 1.4.*",
       "EntityFramework >= 6.1.3"
     ],
     ".NETFramework,Version=v4.5": [

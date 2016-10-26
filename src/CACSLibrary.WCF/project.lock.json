@@ -185,7 +185,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "CACSLibrary >= 1.4.18-*"
+      "CACSLibrary >= 1.4.*"
     ],
     ".NETFramework,Version=v3.5": [
       "System.ServiceModel >= 3.0.0"

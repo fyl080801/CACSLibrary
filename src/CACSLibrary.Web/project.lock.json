@@ -158,7 +158,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "CACSLibrary >= 1.4.19-*"
+      "CACSLibrary >= 1.4.*"
     ],
     ".NETFramework,Version=v4.5": [
       "System.Web >= 4.0.0"
