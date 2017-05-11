@@ -4,7 +4,7 @@
     <Description>CACSLibrary.WCF toolkit</Description>
     <VersionPrefix>1.0.5</VersionPrefix>
     <Authors>fyl08</Authors>
-    <TargetFrameworks>net35;net45;net451;net452;net46;net461</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net452;net46;net461</TargetFrameworks>
     <AssemblyName>CACSLibrary.WCF</AssemblyName>
     <PackageId>CACSLibrary.WCF</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -17,11 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CACSLibrary\CACSLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
@@ -52,6 +47,10 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 
 </Project>

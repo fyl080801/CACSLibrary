@@ -5,7 +5,7 @@
     <AssemblyTitle>CACSLibrary</AssemblyTitle>
     <VersionPrefix>1.4.23</VersionPrefix>
     <Authors>fyl08</Authors>
-    <TargetFrameworks>net35;net45;net451;net452;net46;net461</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net452;net46;net461</TargetFrameworks>
     <AssemblyName>CACSLibrary</AssemblyName>
     <PackageId>CACSLibrary</PackageId>
     <PackageTags>cacs</PackageTags>
@@ -16,18 +16,6 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="netfx-System.Xml.XmlSerializer" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System.Configuration" />
