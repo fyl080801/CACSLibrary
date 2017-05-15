@@ -4,7 +4,7 @@
     <Description>CACSLibrary.Web.Autofac toolkit</Description>
     <VersionPrefix>1.0.2</VersionPrefix>
     <Authors>fyl08</Authors>
-    <TargetFrameworks>net45;net451;net452;net46;net461</TargetFrameworks>
+    <TargetFrameworks>net40;net45;net451;net452;net46;net461</TargetFrameworks>
     <AssemblyName>CACSLibrary.Web.Autofac</AssemblyName>
     <PackageId>CACSLibrary.Web.Autofac</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -20,8 +20,10 @@
     <ProjectReference Include="..\CACSLibrary.Autofac\CACSLibrary.Autofac.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Autofac.Mvc5" Version="3.3.4" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Web" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">

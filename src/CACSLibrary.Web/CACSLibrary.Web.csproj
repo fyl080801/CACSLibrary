@@ -4,7 +4,7 @@
     <Description>CACSLibrary.Web toolkit</Description>
     <VersionPrefix>1.4.12</VersionPrefix>
     <Authors>fyl08</Authors>
-    <TargetFrameworks>net45;net451;net452;net46;net461</TargetFrameworks>
+    <TargetFrameworks>net40;net45;net451;net452;net46;net461</TargetFrameworks>
     <AssemblyName>CACSLibrary.Web</AssemblyName>
     <PackageId>CACSLibrary.Web</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -17,6 +17,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CACSLibrary\CACSLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Web" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">

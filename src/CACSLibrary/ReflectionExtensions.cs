@@ -10,7 +10,7 @@ namespace CACSLibrary
     /// <summary>
     /// 
     /// </summary>
-    internal static class ReflectionExtensions
+    public static class ReflectionExtensions
     {
         /// <summary>
         /// 获取类型构造函数
