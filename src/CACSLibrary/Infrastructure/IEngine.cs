@@ -7,7 +7,7 @@ namespace CACSLibrary.Infrastructure
     /// 引擎
     /// </summary>
     /// <remarks>引擎管理了程序运行的基本行为，包括对象容器和对象容器取出相关类型的实例</remarks>
-    public interface IEngine
+    public interface IEngine : IDisposable
     {
         /// <summary>
         /// 对象容器

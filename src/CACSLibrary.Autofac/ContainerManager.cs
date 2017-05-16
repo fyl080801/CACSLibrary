@@ -11,6 +11,7 @@ namespace CACSLibrary.Autofac
 {
     public class ContainerManager : IContainerManager
     {
+        private bool _disposed = false;
         private ContainerBuilder _builder = new ContainerBuilder();
         private readonly IContainer _container;
 
@@ -99,13 +100,6 @@ namespace CACSLibrary.Autofac
                 var serviceTypes = new List<Type> { service };
                 var temp = x.RegisterType(implementation).As(serviceTypes.ToArray())
                     .WithParameters(properties.Select(y => new global::Autofac.Core.NamedPropertyParameter(y.Key, y.Value)).ToArray());
-                //#if net35
-                //                var temp = x.RegisterType(implementation).As(serviceTypes.ToArray())
-                //                    .WithParameters(properties.Select(y => new global::Autofac.Core.NamedPropertyParameter(y.Key, y.Value)).ToArray());
-                //#else
-                //                var temp = x.RegisterType(implementation).As(serviceTypes.ToArray())
-                //                   .WithParameters(properties.Select(y => new NamedParameter(y.Key, y.Value)));
-                //#endif
                 if (!string.IsNullOrEmpty(key))
                 {
                     temp.Keyed(key, service);
@@ -203,6 +197,11 @@ namespace CACSLibrary.Autofac
             }
         }
 
+        public bool Disposed
+        {
+            get { return _disposed; }
+        }
+
         protected virtual IRegistrationBuilder<TLimit, TActivatorData, TRegistrationStyle> PerLifeStyle<TLimit, TActivatorData, TRegistrationStyle>(IRegistrationBuilder<TLimit, TActivatorData, TRegistrationStyle> builder, ComponentLifeStyle lifeStyle)
         {
             IRegistrationBuilder<TLimit, TActivatorData, TRegistrationStyle> result;
@@ -246,17 +245,11 @@ namespace CACSLibrary.Autofac
             builder.Update(this.Container);
         }
 
-        //public void RegisterComponentInstance<TService>(Func<IContainerManager, TService> implementation, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Singleton)
-        //{
-        //    var instance = implementation.Invoke(this);
-        //    RegisterComponentInstance<TService>(instance, instance.GetType().FullName, lifeStyle);
-        //}
-
-        //public void RegisterComponentInstance(Func<IContainerManager, object> implementation, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Singleton)
-        //{
-        //    var instance = implementation.Invoke(this);
-        //    RegisterComponentInstance(instance, instance.GetType().FullName, lifeStyle);
-        //}
+        public void Dispose()
+        {
+            this.Container.Dispose();
+            _disposed = true;
+        }
     }
 
     public static class ContainerManagerExtensions

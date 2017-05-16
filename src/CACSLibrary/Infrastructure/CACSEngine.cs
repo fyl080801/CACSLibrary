@@ -216,7 +216,7 @@ namespace CACSLibrary.Infrastructure
         protected virtual void RegisterDependency()
         {
             var list = this.FindInstances<IDependencyRegister>().OrderBy(m => m.Level).ToList();
-            list.ForEach(delegate(IDependencyRegister m)
+            list.ForEach(delegate (IDependencyRegister m)
             {
                 m.Register(this.ContainerManager, this.ContainerManager.Resolve<ITypeFinder>());
             });
@@ -245,6 +245,11 @@ namespace CACSLibrary.Infrastructure
                 list.Add(item);
             }
             return list;
+        }
+
+        public void Dispose()
+        {
+            this.ContainerManager.Dispose();
         }
     }
 }

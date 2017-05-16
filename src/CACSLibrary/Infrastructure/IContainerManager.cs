@@ -6,7 +6,7 @@ namespace CACSLibrary.Infrastructure
     /// <summary>
     /// “¿¿µœÓ»›∆˜π‹¿Ì
     /// </summary>
-    public interface IContainerManager
+    public interface IContainerManager : IDisposable
     {
         /// <summary>
         /// 
@@ -140,5 +140,10 @@ namespace CACSLibrary.Infrastructure
         /// <param name="serviceType"></param>
         /// <returns></returns>
         bool IsRegistered(Type serviceType);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        bool Disposed { get; }
     }
 }
