@@ -1,3 +1,7 @@
 {
-  "profiles": {}
+  "profiles": {
+    "CACSLibrary": {
+      "commandName": "Project"
+    }
+  }
 }
