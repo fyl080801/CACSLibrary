@@ -148,33 +148,35 @@ namespace CACSLibrary.Autofac
         public object ResolveUnregistered(Type type)
         {
             ConstructorInfo[] constructors = type.GetConstructors();
-            foreach (ConstructorInfo constructor in constructors)
+            List<object> list = new List<object>();
+            if (constructors.Length > 0)
             {
-                try
+                foreach (ConstructorInfo constructor in constructors)
                 {
-                    ParameterInfo[] parameters = constructor.GetParameters();
-                    List<object> list = new List<object>();
-                    foreach (ParameterInfo param in parameters)
+                    try
                     {
-                        object item = this.Resolve(param.ParameterType);
-                        if (item == null)
+                        ParameterInfo[] parameters = constructor.GetParameters();
+                        foreach (ParameterInfo param in parameters)
                         {
-                            throw new CACSException(string.Format("未知的类型 {0}", type.Name));
+                            object item = this.Resolve(param.ParameterType);
+                            if (item == null)
+                            {
+                                throw new CACSException(string.Format("未知的类型 {0}", type.Name));
+                            }
+                            list.Add(item);
                         }
-                        list.Add(item);
                     }
-                    var obj = Activator.CreateInstance(type, list.ToArray());
-                    if (obj is MarshalByRefObject)
-                        return Injection.Wrap(type, obj);
-                    else
-                        return obj;
-                }
-                catch (CACSException ex)
-                {
-                    throw ex;
+                    catch (CACSException ex)
+                    {
+                        throw ex;
+                    }
                 }
             }
-            throw new CACSException(string.Format("找不到类型 {0} 的构造函数", type.Name));
+            var obj = list.Count > 0 ? Activator.CreateInstance(type, list.ToArray()) : Activator.CreateInstance(type);
+            if (obj is MarshalByRefObject)
+                return Injection.Wrap(type, obj);
+            else
+                return obj;
         }
 
         public virtual ILifetimeScope Scope()
